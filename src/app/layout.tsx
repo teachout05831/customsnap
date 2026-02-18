@@ -13,8 +13,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CustomSnap",
-  description: "Custom websites, snapped into place. Built by real humans.",
+  title: "CustomSnap — Custom Websites for Small Businesses",
+  description:
+    "Get a professional, custom-built website for your small business. No templates, no DIY — real designers build it for you. Free preview in days.",
+  metadataBase: new URL("https://customsnap.io"),
+  openGraph: {
+    title: "CustomSnap — Custom Websites for Small Businesses",
+    description:
+      "Get a professional, custom-built website for your small business. No templates, no DIY — real designers build it for you. Free preview in days.",
+    url: "https://customsnap.io",
+    siteName: "CustomSnap",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CustomSnap — Custom Websites for Small Businesses",
+    description:
+      "Get a professional, custom-built website for your small business. No templates, no DIY — real designers build it for you.",
+  },
 };
 
 export default function RootLayout({
