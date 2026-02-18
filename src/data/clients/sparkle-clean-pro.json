@@ -1,0 +1,79 @@
+{
+  "id": "5",
+  "slug": "sparkle-clean-pro",
+  "name": "Sparkle Clean Pro",
+  "email": "book@sparklecleanpro.com",
+  "phone": "(512) 555-CLEAN",
+  "status": "prospect",
+  "template": "service-business",
+  "colors": {
+    "primary": "#0d9488",
+    "secondary": "#0f766e",
+    "accent": "#5eead4",
+    "background": "#f0fdfa",
+    "text": "#134e4a"
+  },
+  "content": {
+    "hero": {
+      "headline": "A Cleaner Home. A Happier Life.",
+      "subheadline": "Eco-Friendly Cleaning • Background-Checked Teams • Satisfaction Guaranteed",
+      "cta": "Book Online Now",
+      "ctaLink": "#contact"
+    },
+    "about": {
+      "title": "Professional Cleaning, Personal Touch",
+      "text": "Sparkle Clean Pro was founded with a simple mission: deliver spotless results with products that are safe for your family, pets, and planet. Our professionally trained, background-checked teams use eco-friendly cleaning supplies and follow a detailed 50-point checklist. If you're not 100% satisfied, we'll re-clean for free."
+    },
+    "services": [
+      {
+        "name": "Regular Cleaning",
+        "description": "Weekly, bi-weekly, or monthly visits to keep your home consistently clean and fresh.",
+        "icon": "Home"
+      },
+      {
+        "name": "Deep Cleaning",
+        "description": "Comprehensive top-to-bottom cleaning. Perfect for spring cleaning or before special events.",
+        "icon": "Star"
+      },
+      {
+        "name": "Move In/Out Cleaning",
+        "description": "Get your security deposit back or start fresh in your new home. Detailed cleaning that landlords love.",
+        "icon": "Clock"
+      },
+      {
+        "name": "Office Cleaning",
+        "description": "Professional workspace cleaning with flexible scheduling. Evening and weekend availability.",
+        "icon": "Shield"
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "Lisa M.",
+        "content": "I've tried 4 cleaning services over the years. Sparkle Clean Pro is by far the best. Consistent, thorough, and always on time.",
+        "rating": 5
+      },
+      {
+        "name": "James & Emily R.",
+        "content": "With two kids and a dog, our house was always chaos. Now it's spotless every Tuesday. Worth every penny!",
+        "rating": 5
+      },
+      {
+        "name": "Dr. Rachel S.",
+        "content": "They clean my dental office after hours. Impeccable attention to detail and great communication.",
+        "rating": 5
+      }
+    ],
+    "contact": {
+      "phone": "(512) 555-CLEAN",
+      "email": "book@sparklecleanpro.com",
+      "address": "1100 Congress Ave, Suite 200, Austin, TX 78701",
+      "hours": "Mon-Sat: 7AM-7PM"
+    },
+    "social": {
+      "facebook": "https://facebook.com/sparklecleanpro",
+      "instagram": "https://instagram.com/sparklecleanpro"
+    }
+  },
+  "createdAt": "2026-01-22T00:00:00Z",
+  "updatedAt": "2026-01-22T00:00:00Z"
+}

@@ -1,0 +1,36 @@
+# Website Builder - Ralph Progress Log
+# This file tracks learnings across iterations
+# Each iteration appends its notes here for context continuity
+
+================================================================================
+ITERATION 0 - Initial Setup
+Date: 2025-01-19
+================================================================================
+
+## Summary
+- Initialized Ralph workflow for Website Builder project
+- Created prd.json with 35 stories across 6 phases
+- Phase 1 (Foundation) stories 1-12 marked as complete based on existing code
+
+## Current Project State
+- Next.js 14+ with App Router configured
+- Tailwind CSS and Shadcn UI components installed
+- Service Business template components created
+- Preview route working at /preview/[clientSlug]
+- Example client data at src/data/clients/example-plumbing.json
+
+## Files Changed
+- prd.json (created)
+- progress.txt (created)
+
+## Learnings
+- Project uses src/ directory structure
+- Windows environment (use PowerShell commands, not bash)
+- Shadcn UI components in src/components/ui/
+- Template components in src/components/templates/
+- Client data stored as JSON files in src/data/clients/
+
+## Next Story
+DASH-001: Dashboard Layout Shell (Priority 13)
+
+================================================================================

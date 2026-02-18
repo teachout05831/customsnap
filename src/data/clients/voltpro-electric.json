@@ -1,0 +1,79 @@
+{
+  "id": "4",
+  "slug": "voltpro-electric",
+  "name": "VoltPro Electric",
+  "email": "service@voltproelectric.com",
+  "phone": "(512) 555-VOLT",
+  "status": "prospect",
+  "template": "service-business",
+  "colors": {
+    "primary": "#eab308",
+    "secondary": "#1f2937",
+    "accent": "#fbbf24",
+    "background": "#ffffff",
+    "text": "#111827"
+  },
+  "content": {
+    "hero": {
+      "headline": "Licensed Electricians You Can Trust",
+      "subheadline": "24/7 Emergency Service • Residential & Commercial • Free Safety Inspections",
+      "cta": "Schedule Service",
+      "ctaLink": "#contact"
+    },
+    "about": {
+      "title": "Powering Austin Safely Since 2005",
+      "text": "VoltPro Electric is a family-owned company committed to electrical safety and excellence. Our master electricians are fully licensed, bonded, and insured. We specialize in everything from panel upgrades and EV charger installations to complete commercial rewiring. When it comes to electricity, don't take chances - trust the pros."
+    },
+    "services": [
+      {
+        "name": "Emergency Repairs",
+        "description": "Electrical emergencies don't wait, and neither do we. 24/7 response for outages, sparks, and hazards.",
+        "icon": "AlertTriangle"
+      },
+      {
+        "name": "Panel Upgrades",
+        "description": "Modern homes need modern power. Upgrade your panel to handle today's electrical demands safely.",
+        "icon": "Zap"
+      },
+      {
+        "name": "EV Charger Installation",
+        "description": "Level 2 charger installation for all electric vehicle makes. Charge faster at home.",
+        "icon": "Flame"
+      },
+      {
+        "name": "Safety Inspections",
+        "description": "Comprehensive electrical inspections for home buyers, sellers, and peace of mind.",
+        "icon": "Shield"
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "Amanda K.",
+        "content": "Our power went out at 2am with a newborn at home. They arrived in 45 minutes and fixed the issue. Lifesavers!",
+        "rating": 5
+      },
+      {
+        "name": "Tom B.",
+        "content": "Installed our Tesla charger in one day. Clean work, fair price, and they explained everything clearly.",
+        "rating": 5
+      },
+      {
+        "name": "Sandra W.",
+        "content": "Found serious issues during our home inspection that the seller's electrician missed. Thorough and honest.",
+        "rating": 5
+      }
+    ],
+    "contact": {
+      "phone": "(512) 555-VOLT",
+      "email": "service@voltproelectric.com",
+      "address": "4505 S Lamar Blvd, Austin, TX 78745",
+      "hours": "24/7 Emergency Service Available"
+    },
+    "social": {
+      "facebook": "https://facebook.com/voltproelectric",
+      "linkedin": "https://linkedin.com/company/voltproelectric"
+    }
+  },
+  "createdAt": "2026-01-22T00:00:00Z",
+  "updatedAt": "2026-01-22T00:00:00Z"
+}

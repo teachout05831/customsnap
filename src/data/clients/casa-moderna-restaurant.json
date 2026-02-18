@@ -1,0 +1,80 @@
+{
+  "id": "6",
+  "slug": "casa-moderna-restaurant",
+  "name": "Casa Moderna",
+  "email": "reservations@casamoderna.com",
+  "phone": "(512) 555-DINE",
+  "status": "prospect",
+  "template": "service-business",
+  "colors": {
+    "primary": "#991b1b",
+    "secondary": "#7f1d1d",
+    "accent": "#fbbf24",
+    "background": "#fef2f2",
+    "text": "#1c1917"
+  },
+  "content": {
+    "hero": {
+      "headline": "Modern Mexican Cuisine in the Heart of Austin",
+      "subheadline": "Farm-to-Table Ingredients • Award-Winning Chef • Craft Cocktails",
+      "cta": "Reserve a Table",
+      "ctaLink": "#contact"
+    },
+    "about": {
+      "title": "Where Tradition Meets Innovation",
+      "text": "Casa Moderna reimagines classic Mexican dishes with a contemporary twist. Chef Maria Elena brings 20 years of culinary experience, sourcing ingredients from local Texas farms and artisan producers. Our intimate 60-seat restaurant offers an unforgettable dining experience, whether you're celebrating a special occasion or enjoying a casual evening out."
+    },
+    "services": [
+      {
+        "name": "Dinner Service",
+        "description": "Tues-Sun 5PM-10PM. Experience our full menu featuring seasonal tasting options and signature dishes.",
+        "icon": "Star"
+      },
+      {
+        "name": "Weekend Brunch",
+        "description": "Sat-Sun 10AM-2PM. Chilaquiles, huevos rancheros, and bottomless mimosas in a relaxed atmosphere.",
+        "icon": "Clock"
+      },
+      {
+        "name": "Private Events",
+        "description": "Host your next celebration in our private dining room. Custom menus for groups of 10-30 guests.",
+        "icon": "Home"
+      },
+      {
+        "name": "Catering",
+        "description": "Bring Casa Moderna to your event. Full-service catering for weddings, corporate events, and parties.",
+        "icon": "Flame"
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "The Austin Chronicle",
+        "role": "Food Critic",
+        "content": "Best New Restaurant 2025. Chef Maria Elena delivers bold flavors that honor Mexican heritage while pushing boundaries.",
+        "rating": 5
+      },
+      {
+        "name": "Michael & Sarah T.",
+        "content": "We celebrated our anniversary here and it was perfect. The mole is life-changing and the margaritas are the best in Austin.",
+        "rating": 5
+      },
+      {
+        "name": "Jennifer K.",
+        "content": "The brunch here is worth the wait. Don't miss the churro French toast and make a reservation!",
+        "rating": 5
+      }
+    ],
+    "contact": {
+      "phone": "(512) 555-DINE",
+      "email": "reservations@casamoderna.com",
+      "address": "1800 S Congress Ave, Austin, TX 78704",
+      "hours": "Dinner: Tues-Sun 5-10PM | Brunch: Sat-Sun 10AM-2PM"
+    },
+    "social": {
+      "facebook": "https://facebook.com/casamodernaaustins",
+      "instagram": "https://instagram.com/casamodernaaustins"
+    }
+  },
+  "createdAt": "2026-01-22T00:00:00Z",
+  "updatedAt": "2026-01-22T00:00:00Z"
+}

@@ -1,0 +1,81 @@
+{
+  "id": "1",
+  "slug": "example-plumbing",
+  "name": "Example Plumbing Co.",
+  "email": "info@exampleplumbing.com",
+  "phone": "(555) 123-4567",
+  "status": "prospect",
+  "currentSite": "https://oldsite.example.com",
+  "template": "service-business",
+  "colors": {
+    "primary": "#2563eb",
+    "secondary": "#1e40af",
+    "accent": "#fbbf24",
+    "background": "#ffffff",
+    "text": "#1f2937"
+  },
+  "logo": "/uploads/example-plumbing/logo.png",
+  "content": {
+    "hero": {
+      "headline": "Expert Plumbing Services You Can Trust",
+      "subheadline": "24/7 Emergency Service • Licensed & Insured • Free Estimates",
+      "cta": "Get Free Quote",
+      "ctaLink": "#contact"
+    },
+    "about": {
+      "title": "About Us",
+      "text": "With over 20 years of experience serving the community, Example Plumbing Co. has built a reputation for quality work and honest service. Our licensed technicians are available around the clock for all your plumbing needs."
+    },
+    "services": [
+      {
+        "name": "Emergency Repairs",
+        "description": "Fast response for burst pipes, major leaks, and flooding. Available 24/7.",
+        "icon": "AlertTriangle"
+      },
+      {
+        "name": "Drain Cleaning",
+        "description": "Professional drain cleaning to clear clogs and prevent backups.",
+        "icon": "Droplets"
+      },
+      {
+        "name": "Water Heater Service",
+        "description": "Installation, repair, and maintenance for all water heater types.",
+        "icon": "Flame"
+      },
+      {
+        "name": "Bathroom Remodeling",
+        "description": "Complete bathroom plumbing for renovations and new construction.",
+        "icon": "Bath"
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "John D.",
+        "content": "They came out within an hour when our basement flooded. Professional, fast, and fair pricing. Highly recommend!",
+        "rating": 5
+      },
+      {
+        "name": "Sarah M.",
+        "content": "Best plumber we've ever used. They fixed a leak that two other companies couldn't figure out.",
+        "rating": 5
+      },
+      {
+        "name": "Mike R.",
+        "content": "On time, clean work, and they explained everything before starting. Will definitely use again.",
+        "rating": 5
+      }
+    ],
+    "contact": {
+      "phone": "(555) 123-4567",
+      "email": "info@exampleplumbing.com",
+      "address": "123 Main Street, Anytown, USA 12345",
+      "hours": "24/7 Emergency Service"
+    },
+    "social": {
+      "facebook": "https://facebook.com/exampleplumbing",
+      "instagram": "https://instagram.com/exampleplumbing"
+    }
+  },
+  "createdAt": "2026-01-19T00:00:00Z",
+  "updatedAt": "2026-01-19T00:00:00Z"
+}

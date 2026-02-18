@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bold Dark SaaS Template</title>
+    <style>
+        /* CSS Variables - Dark Theme Inspired by Superside/Webflow */
+        :root {
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.3);
+            --accent: #22d3ee;
+            --bg-dark: #0f0f0f;
+            --bg-card: #1a1a1a;
+            --bg-elevated: #252525;
+            --text-white: #ffffff;
+            --text-gray: #a1a1aa;
+            --text-muted: #71717a;
+            --border-dark: #2a2a2a;
+            --gradient: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== ANNOUNCEMENT BAR ===== */
+        .announcement {
+            background: var(--gradient);
+            padding: 12px;
+            text-align: center;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .announcement a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(15, 15, 15, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-white);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn-ghost {
+            color: var(--text-gray);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn-ghost:hover {
+            color: var(--text-white);
+            background: var(--bg-elevated);
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px var(--primary-glow);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background glow effect */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 600px;
+            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-dark);
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            color: var(--text-gray);
+            margin-bottom: 32px;
+        }
+
+        .hero-badge span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 .gradient {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        .btn-large {
+            padding: 16px 32px;
+            font-size: 1rem;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--border-dark);
+            color: var(--text-white);
+            padding: 14px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .hero-image {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 25px 100px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-image img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Glow effect on image */
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--radius);
+            padding: 1px;
+            background: var(--gradient);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        /* ===== LOGOS SECTION ===== */
+        .logos {
+            padding: 80px 0;
+            border-top: 1px solid var(--border-dark);
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .logos p {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        .logos-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 64px;
+            flex-wrap: wrap;
+        }
+
+        .logos-grid img {
+            height: 28px;
+            opacity: 0.5;
+            filter: brightness(0) invert(1);
+            transition: opacity 0.3s;
+        }
+
+        .logos-grid img:hover {
+            opacity: 1;
+        }
+
+        /* ===== FEATURES GRID ===== */
+        .features {
+            padding: 120px 0;
+        }
+
+        .section-label {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .section-header {
+            max-width: 600px;
+            margin-bottom: 64px;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            font-size: 1.125rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-dark);
+            border-radius: var(--radius);
+            padding: 32px;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 0.9375rem;
+        }
+
+        /* ===== BENTO GRID ===== */
+        .bento {
+            padding: 80px 0 120px;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+            gap: 24px;
+        }
+
+        .bento-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-dark);
+            border-radius: var(--radius);
+            padding: 32px;
+            overflow: hidden;
+        }
+
+        .bento-card.large {
+            grid-column: span 2;
+        }
+
+        .bento-card.tall {
+            grid-row: span 2;
+        }
+
+        .bento-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .bento-card p {
+            color: var(--text-gray);
+            margin-bottom: 24px;
+        }
+
+        .bento-visual {
+            background: var(--bg-elevated);
+            border-radius: 12px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            padding: 120px 0;
+            background: var(--bg-card);
+        }
+
+        .testimonials .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 64px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-dark);
+            border: 1px solid var(--border-dark);
+            border-radius: var(--radius);
+            padding: 32px;
+        }
+
+        .testimonial-stars {
+            color: #fbbf24;
+            font-size: 1.125rem;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-card blockquote {
+            font-size: 1rem;
+            margin-bottom: 24px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-author img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+        }
+
+        .testimonial-author .name {
+            font-weight: 600;
+        }
+
+        .testimonial-author .role {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* ===== PRICING ===== */
+        .pricing {
+            padding: 120px 0;
+        }
+
+        .pricing .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 64px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-dark);
+            border-radius: var(--radius);
+            padding: 40px 32px;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            background: linear-gradient(180deg, rgba(99, 102, 241, 0.1) 0%, var(--bg-card) 100%);
+        }
+
+        .pricing-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient);
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .description {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-bottom: 24px;
+        }
+
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .price span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .pricing-card .billing {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-bottom: 32px;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .pricing-card li {
+            padding: 12px 0;
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .pricing-card li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-card li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .pricing-card .btn-primary {
+            width: 100%;
+            text-align: center;
+            display: block;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta {
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 400px;
+            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            color: var(--text-gray);
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--border-dark);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(4, 1fr);
+            gap: 48px;
+            margin-bottom: 64px;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            margin-top: 16px;
+            font-size: 0.9375rem;
+            max-width: 280px;
+        }
+
+        .footer h4 {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            color: var(--text-muted);
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer li {
+            margin-bottom: 12px;
+        }
+
+        .footer a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            transition: color 0.2s;
+        }
+
+        .footer a:hover {
+            color: var(--text-white);
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid var(--border-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .features-grid,
+            .testimonial-grid,
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bento-card.large {
+                grid-column: span 1;
+            }
+
+            .bento-card.tall {
+                grid-row: span 1;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 80px 0 60px;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .features-grid,
+            .testimonial-grid,
+            .pricing-grid,
+            .logos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .cta h2 {
+                font-size: 2rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-brand p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="announcement">
+        New: AI-powered features now available. <a href="#">Learn more →</a>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Nexus</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#testimonials">Customers</a></li>
+                <li><a href="#">Resources</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="#" class="btn-ghost">Log in</a>
+                <a href="#" class="btn-primary">Start Free Trial</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <span>NEW</span> Version 3.0 is here
+            </div>
+            <h1>Build websites<br><span class="gradient">at lightning speed</span></h1>
+            <p>The AI-powered platform that helps you create, launch, and scale beautiful websites in minutes, not months.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary btn-large">Start Free Trial</a>
+                <a href="#" class="btn-outline btn-large">Book a Demo</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://placehold.co/1000x600/1a1a1a/6366f1?text=Platform+Dashboard" alt="Platform Dashboard">
+            </div>
+        </div>
+    </section>
+
+    <!-- LOGOS -->
+    <section class="logos">
+        <div class="container">
+            <p>Trusted by innovative teams worldwide</p>
+            <div class="logos-grid">
+                <img src="https://placehold.co/120x40/white/white?text=Acme" alt="Acme">
+                <img src="https://placehold.co/120x40/white/white?text=Globex" alt="Globex">
+                <img src="https://placehold.co/120x40/white/white?text=Hooli" alt="Hooli">
+                <img src="https://placehold.co/120x40/white/white?text=Pied+Piper" alt="Pied Piper">
+                <img src="https://placehold.co/120x40/white/white?text=Stark" alt="Stark">
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Features</p>
+                <h2>Everything you need to build faster</h2>
+                <p>A complete toolkit for modern web development, powered by AI and designed for speed.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>AI-Powered Generation</h3>
+                    <p>Describe what you want and watch as our AI builds it in seconds. No coding required.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Visual Editor</h3>
+                    <p>Drag and drop components, customize styles, and see changes in real-time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Responsive by Default</h3>
+                    <p>Every site looks perfect on desktop, tablet, and mobile automatically.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>One-Click Deploy</h3>
+                    <p>Push your site live instantly with our global CDN and edge network.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Enterprise Security</h3>
+                    <p>SOC 2 compliant with SSL, DDoS protection, and 99.99% uptime SLA.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Built-in Analytics</h3>
+                    <p>Track visitors, conversions, and performance without third-party tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENTO GRID -->
+    <section class="bento">
+        <div class="container">
+            <div class="bento-grid">
+                <div class="bento-card large">
+                    <h3>AI Website Generator</h3>
+                    <p>Describe your vision and let AI create a fully functional website in under 30 seconds.</p>
+                    <div class="bento-visual">[ AI Generation Preview ]</div>
+                </div>
+                <div class="bento-card">
+                    <h3>150+ Templates</h3>
+                    <p>Start with professionally designed templates for any industry.</p>
+                    <div class="bento-visual" style="height: 120px;">[ Templates Grid ]</div>
+                </div>
+                <div class="bento-card">
+                    <h3>Custom Domains</h3>
+                    <p>Connect your own domain or get a free subdomain.</p>
+                    <div class="bento-visual" style="height: 120px;">[ Domain Setup ]</div>
+                </div>
+                <div class="bento-card large">
+                    <h3>Collaborative Editing</h3>
+                    <p>Work together with your team in real-time. Leave comments, track changes, and ship faster.</p>
+                    <div class="bento-visual">[ Team Collaboration View ]</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Testimonials</p>
+                <h2>Loved by thousands of teams</h2>
+                <p>See what our customers are saying about their experience.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <blockquote>"Nexus has completely transformed how we build landing pages. What used to take weeks now takes hours."</blockquote>
+                    <div class="testimonial-author">
+                        <img src="https://placehold.co/44x44/6366f1/white?text=AK" alt="Alex Kim">
+                        <div>
+                            <div class="name">Alex Kim</div>
+                            <div class="role">Head of Marketing, TechCorp</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <blockquote>"The AI generation is mind-blowing. I described my portfolio site and it was built in 30 seconds. Incredible."</blockquote>
+                    <div class="testimonial-author">
+                        <img src="https://placehold.co/44x44/22d3ee/white?text=SR" alt="Sarah Rodriguez">
+                        <div>
+                            <div class="name">Sarah Rodriguez</div>
+                            <div class="role">Freelance Designer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <blockquote>"We've cut our development costs by 60% since switching to Nexus. The ROI is unbelievable."</blockquote>
+                    <div class="testimonial-author">
+                        <img src="https://placehold.co/44x44/a855f7/white?text=MC" alt="Marcus Chen">
+                        <div>
+                            <div class="name">Marcus Chen</div>
+                            <div class="role">CTO, StartupXYZ</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Pricing</p>
+                <h2>Simple, transparent pricing</h2>
+                <p>Start free, upgrade when you're ready. No hidden fees.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <p class="description">For individuals and side projects</p>
+                    <div class="price">$0<span>/month</span></div>
+                    <p class="billing">Free forever</p>
+                    <ul>
+                        <li>3 published sites</li>
+                        <li>AI generation (50/month)</li>
+                        <li>Free subdomain</li>
+                        <li>Community support</li>
+                    </ul>
+                    <a href="#" class="btn-primary">Get Started Free</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>Pro</h3>
+                    <p class="description">For growing businesses</p>
+                    <div class="price">$29<span>/month</span></div>
+                    <p class="billing">Billed annually</p>
+                    <ul>
+                        <li>Unlimited sites</li>
+                        <li>AI generation (unlimited)</li>
+                        <li>Custom domains</li>
+                        <li>Priority support</li>
+                        <li>Analytics dashboard</li>
+                    </ul>
+                    <a href="#" class="btn-primary">Start Free Trial</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <p class="description">For large teams</p>
+                    <div class="price">Custom</div>
+                    <p class="billing">Contact for pricing</p>
+                    <ul>
+                        <li>Everything in Pro</li>
+                        <li>SSO & SAML</li>
+                        <li>Dedicated support</li>
+                        <li>SLA guarantee</li>
+                        <li>Custom integrations</li>
+                    </ul>
+                    <a href="#" class="btn-primary">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to build something amazing?</h2>
+            <p>Join thousands of teams building faster with Nexus. Start your free trial today.</p>
+            <a href="#" class="btn-primary btn-large">Start Building Free</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">Nexus</a>
+                    <p>The AI-powered platform for building beautiful websites at lightning speed.</p>
+                </div>
+                <div>
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Templates</a></li>
+                        <li><a href="#">Integrations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nexus. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,86 @@
+{
+  "id": "11",
+  "slug": "cloudpeak-software",
+  "name": "CloudPeak Software",
+  "email": "hello@cloudpeak.io",
+  "phone": "(512) 555-SAAS",
+  "status": "prospect",
+  "template": "service-business",
+  "colors": {
+    "primary": "#7c3aed",
+    "secondary": "#6d28d9",
+    "accent": "#a78bfa",
+    "background": "#faf5ff",
+    "text": "#1e1b4b"
+  },
+  "content": {
+    "hero": {
+      "headline": "Automate Your Business Operations",
+      "subheadline": "AI-Powered Workflow Automation • No Code Required • 14-Day Free Trial",
+      "cta": "Start Free Trial",
+      "ctaLink": "#contact"
+    },
+    "about": {
+      "title": "Work Smarter, Not Harder",
+      "text": "CloudPeak helps growing businesses eliminate repetitive tasks and focus on what matters. Our AI-powered platform connects your existing tools and automates workflows in minutes - no coding required. From invoice processing to customer onboarding, over 5,000 companies trust CloudPeak to save 10+ hours per week. Founded in 2021 by former Google and Salesforce engineers, we're backed by top-tier VCs and growing 300% year-over-year."
+    },
+    "services": [
+      {
+        "name": "Workflow Automation",
+        "description": "Connect 300+ apps and create automated workflows with our visual drag-and-drop builder.",
+        "icon": "Settings"
+      },
+      {
+        "name": "AI Document Processing",
+        "description": "Extract data from invoices, contracts, and forms automatically. 99% accuracy guaranteed.",
+        "icon": "Zap"
+      },
+      {
+        "name": "Custom Integrations",
+        "description": "Need something specific? Our team builds custom integrations for enterprise clients.",
+        "icon": "Wrench"
+      },
+      {
+        "name": "Analytics Dashboard",
+        "description": "Track time saved, errors prevented, and ROI with real-time analytics and reporting.",
+        "icon": "Star"
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "Sarah K.",
+        "role": "COO",
+        "company": "GrowthStartup Inc.",
+        "content": "CloudPeak automated our entire client onboarding process. What took 2 hours now takes 5 minutes.",
+        "rating": 5
+      },
+      {
+        "name": "Michael R.",
+        "role": "Finance Director",
+        "company": "MidSize Manufacturing",
+        "content": "Invoice processing that used to take my team a full day is now done automatically overnight.",
+        "rating": 5
+      },
+      {
+        "name": "Lisa T.",
+        "role": "Operations Manager",
+        "company": "E-commerce Brand",
+        "content": "The ROI was obvious within the first month. We scaled from 100 to 1,000 orders/day without adding staff.",
+        "rating": 5
+      }
+    ],
+    "contact": {
+      "phone": "(512) 555-SAAS",
+      "email": "hello@cloudpeak.io",
+      "address": "600 Congress Ave, Suite 1400, Austin, TX 78701",
+      "hours": "Sales: Mon-Fri 9AM-6PM | Support: 24/7"
+    },
+    "social": {
+      "linkedin": "https://linkedin.com/company/cloudpeaksoftware",
+      "twitter": "https://twitter.com/cloudpeakio",
+      "youtube": "https://youtube.com/cloudpeaksoftware"
+    }
+  },
+  "createdAt": "2026-01-22T00:00:00Z",
+  "updatedAt": "2026-01-22T00:00:00Z"
+}

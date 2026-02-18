@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design 3: Warm & Friendly - Customer Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+  </style>
+</head>
+<body class="bg-orange-50 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-200">
+          <span class="text-white font-bold text-xl">C</span>
+        </div>
+        <div>
+          <span class="text-xl font-bold text-gray-900">Crafted Sites</span>
+          <p class="text-xs text-gray-500">Your Project Dashboard</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <button class="text-gray-500 hover:text-gray-700">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+          </svg>
+        </button>
+        <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+          <span class="text-orange-600 font-semibold">JD</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-6 py-10">
+
+    <!-- Welcome Banner -->
+    <div class="bg-gradient-to-r from-orange-500 to-red-500 rounded-3xl p-8 text-white mb-8 shadow-xl shadow-orange-200">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
+          <span class="text-3xl">👋</span>
+        </div>
+        <div>
+          <h1 class="text-2xl font-bold">Hey John!</h1>
+          <p class="text-orange-100">Great news — your website is 60% complete!</p>
+        </div>
+      </div>
+      <div class="bg-white/20 rounded-xl p-4 mt-6">
+        <div class="flex justify-between text-sm mb-2">
+          <span>Progress</span>
+          <span>60%</span>
+        </div>
+        <div class="h-3 bg-white/30 rounded-full overflow-hidden">
+          <div class="h-full bg-white rounded-full" style="width: 60%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Status Cards -->
+    <div class="grid md:grid-cols-4 gap-4 mb-8">
+      <div class="bg-white rounded-2xl p-5 shadow-sm">
+        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-3">
+          <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+        <p class="text-2xl font-bold text-gray-900">2</p>
+        <p class="text-sm text-gray-500">Steps Complete</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 shadow-sm">
+        <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-3">
+          <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+        </div>
+        <p class="text-2xl font-bold text-gray-900">Active</p>
+        <p class="text-sm text-gray-500">Development</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 shadow-sm">
+        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-3">
+          <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+        <p class="text-2xl font-bold text-gray-900">Feb 3</p>
+        <p class="text-sm text-gray-500">Est. Launch</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 shadow-sm">
+        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-3">
+          <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+        </div>
+        <p class="text-2xl font-bold text-gray-900">5</p>
+        <p class="text-sm text-gray-500">Pages Planned</p>
+      </div>
+    </div>
+
+    <!-- Journey Timeline -->
+    <div class="bg-white rounded-3xl p-8 shadow-sm mb-8">
+      <h2 class="text-xl font-bold text-gray-900 mb-6">Your Journey</h2>
+
+      <div class="space-y-6">
+        <!-- Step 1 -->
+        <div class="flex gap-4">
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            <div class="w-0.5 h-full bg-green-200 mt-2"></div>
+          </div>
+          <div class="pb-8">
+            <h3 class="font-semibold text-gray-900">Discovery Call</h3>
+            <p class="text-gray-500 text-sm">We learned all about your business and goals</p>
+            <span class="text-xs text-green-600 bg-green-50 px-2 py-1 rounded-full mt-2 inline-block">Completed Jan 28</span>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex gap-4">
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            <div class="w-0.5 h-full bg-orange-200 mt-2"></div>
+          </div>
+          <div class="pb-8">
+            <h3 class="font-semibold text-gray-900">Design Approved</h3>
+            <p class="text-gray-500 text-sm">You loved the design direction — we're on the same page!</p>
+            <span class="text-xs text-green-600 bg-green-50 px-2 py-1 rounded-full mt-2 inline-block">Completed Jan 30</span>
+          </div>
+        </div>
+
+        <!-- Step 3 - Current -->
+        <div class="flex gap-4">
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white ring-4 ring-orange-100 animate-pulse">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+              </svg>
+            </div>
+            <div class="w-0.5 h-full bg-gray-200 mt-2"></div>
+          </div>
+          <div class="pb-8">
+            <h3 class="font-semibold text-orange-600">Building Your Site</h3>
+            <p class="text-gray-500 text-sm">Our team is hand-crafting your website right now</p>
+            <span class="text-xs text-orange-600 bg-orange-50 px-2 py-1 rounded-full mt-2 inline-block">In Progress</span>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="flex gap-4">
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-400">
+              4
+            </div>
+            <div class="w-0.5 h-full bg-gray-200 mt-2"></div>
+          </div>
+          <div class="pb-8">
+            <h3 class="font-semibold text-gray-400">Your Review</h3>
+            <p class="text-gray-400 text-sm">You'll preview your site and request any changes</p>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="flex gap-4">
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-400">
+              🚀
+            </div>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-400">Launch Day!</h3>
+            <p class="text-gray-400 text-sm">Your new website goes live</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Help Section -->
+    <div class="bg-white rounded-3xl p-6 shadow-sm flex items-center gap-6">
+      <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center text-3xl">
+        💬
+      </div>
+      <div class="flex-1">
+        <h3 class="font-bold text-gray-900">Questions? We're here!</h3>
+        <p class="text-gray-500 text-sm">Chat with us anytime — we typically respond within an hour.</p>
+      </div>
+      <button class="bg-orange-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-orange-600 transition-colors shadow-lg shadow-orange-200">
+        Start Chat
+      </button>
+    </div>
+
+  </main>
+
+</body>
+</html>

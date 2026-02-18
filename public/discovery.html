@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discovery Questionnaire</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .step { display: none; }
+    .step.active { display: block; }
+
+    /* Much more visible selection styles - Orange theme */
+    .option-chip.selected {
+      background-color: #ea580c !important;
+      border-color: #ea580c !important;
+      color: white !important;
+    }
+
+    .style-card.selected {
+      border-color: #ea580c !important;
+      box-shadow: 0 0 0 4px #fb923c !important;
+    }
+
+    .option-card.selected {
+      background-color: #fff7ed !important;
+      border-color: #ea580c !important;
+    }
+
+    .option-card.selected span:first-of-type {
+      color: #ea580c !important;
+    }
+
+    .timeline-btn.selected,
+    .service-btn.selected {
+      background-color: #ea580c !important;
+      border-color: #ea580c !important;
+      color: white !important;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 min-h-screen">
+  <!-- Header -->
+  <header class="bg-white border-b border-gray-200 sticky top-0 z-10">
+    <div class="max-w-4xl mx-auto px-4 py-4">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-xl font-bold text-orange-600">Crafted Sites</span>
+        <span class="text-sm text-gray-500">Quick Discovery</span>
+      </div>
+      <!-- Progress Bar -->
+      <div class="relative">
+        <div class="absolute top-4 left-0 right-0 h-1 bg-gray-200 rounded"></div>
+        <div id="progress-line" class="absolute top-4 left-0 h-1 bg-orange-500 rounded transition-all duration-300" style="width: 0%"></div>
+        <div class="relative flex justify-between">
+          <div class="step-indicator flex flex-col items-center cursor-pointer" data-step="1" onclick="goToStep(1)">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium bg-orange-500 text-white ring-4 ring-orange-100">1</div>
+            <span class="mt-2 text-xs font-medium text-orange-600 hidden sm:block">Style</span>
+          </div>
+          <div class="step-indicator flex flex-col items-center cursor-pointer" data-step="2" onclick="goToStep(2)">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium bg-gray-300 text-gray-600">2</div>
+            <span class="mt-2 text-xs font-medium text-gray-400 hidden sm:block">Avoid</span>
+          </div>
+          <div class="step-indicator flex flex-col items-center cursor-pointer" data-step="3" onclick="goToStep(3)">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium bg-gray-300 text-gray-600">3</div>
+            <span class="mt-2 text-xs font-medium text-gray-400 hidden sm:block">Challenges</span>
+          </div>
+          <div class="step-indicator flex flex-col items-center cursor-pointer" data-step="4" onclick="goToStep(4)">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium bg-gray-300 text-gray-600">4</div>
+            <span class="mt-2 text-xs font-medium text-gray-400 hidden sm:block">Needs</span>
+          </div>
+          <div class="step-indicator flex flex-col items-center cursor-pointer" data-step="5" onclick="goToStep(5)">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium bg-gray-300 text-gray-600">5</div>
+            <span class="mt-2 text-xs font-medium text-gray-400 hidden sm:block">Goals</span>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Step Indicator -->
+      <div class="sm:hidden mt-4 text-center">
+        <span id="mobile-step" class="text-sm font-medium text-gray-600">Step 1 of 5: Style</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-2xl mx-auto px-4 py-8 pb-32">
+
+    <!-- Step 1: Style & Inspiration -->
+    <div class="step active" data-step="1">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">What's your vibe?</h2>
+        <p class="text-gray-500">Pick a style that speaks to you. We'll use this as inspiration.</p>
+      </div>
+
+      <!-- Style Direction (Multi-select) -->
+      <div class="mb-8 bg-white rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">What styles do you like? <span class="text-red-500">*</span></h3>
+        <p class="text-sm text-gray-500 mb-4">Select all that appeal to you - most brands are a mix!</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="style-cards">
+          <button type="button" class="style-card relative rounded-xl p-4 text-left transition-all duration-200 border-2 border-gray-200 hover:border-orange-400 bg-gradient-to-br from-gray-50 to-white" data-value="modern-clean" onclick="toggleStyleCard(this)">
+            <div class="h-12 mb-3 rounded-lg border border-gray-200 flex items-center justify-center bg-white">
+              <div class="flex gap-1">
+                <div class="w-6 h-0.5 rounded bg-gray-300"></div>
+                <div class="w-6 h-0.5 rounded bg-gray-400"></div>
+              </div>
+            </div>
+            <h4 class="font-semibold text-sm text-gray-900">Modern & Clean</h4>
+            <p class="text-xs text-gray-500 mt-0.5">Minimal, white space</p>
+          </button>
+          <button type="button" class="style-card relative rounded-xl p-4 text-left transition-all duration-200 border-2 border-purple-300 hover:border-orange-400 bg-gradient-to-br from-purple-500 to-pink-500" data-value="bold-colorful" onclick="toggleStyleCard(this)">
+            <div class="h-12 mb-3 rounded-lg border border-white/30 flex items-center justify-center">
+              <div class="flex gap-1">
+                <div class="w-3 h-3 rounded-full bg-yellow-300"></div>
+                <div class="w-3 h-3 rounded-full bg-green-300"></div>
+                <div class="w-3 h-3 rounded-full bg-blue-300"></div>
+              </div>
+            </div>
+            <h4 class="font-semibold text-sm text-white">Bold & Colorful</h4>
+            <p class="text-xs text-white/70 mt-0.5">Vibrant, energetic</p>
+          </button>
+          <button type="button" class="style-card relative rounded-xl p-4 text-left transition-all duration-200 border-2 border-amber-200 hover:border-orange-400 bg-gradient-to-br from-amber-50 to-orange-100" data-value="warm-friendly" onclick="toggleStyleCard(this)">
+            <div class="h-12 mb-3 rounded-lg border border-amber-200 flex items-center justify-center bg-white/50">
+              <div class="text-lg">☀️</div>
+            </div>
+            <h4 class="font-semibold text-sm text-amber-900">Warm & Friendly</h4>
+            <p class="text-xs text-amber-700 mt-0.5">Earthy, inviting</p>
+          </button>
+          <button type="button" class="style-card relative rounded-xl p-4 text-left transition-all duration-200 border-2 border-slate-500 hover:border-orange-400 bg-gradient-to-br from-slate-700 to-slate-800" data-value="professional-polished" onclick="toggleStyleCard(this)">
+            <div class="h-12 mb-3 rounded-lg border border-slate-600 flex items-center justify-center">
+              <div class="text-lg">💼</div>
+            </div>
+            <h4 class="font-semibold text-sm text-white">Professional</h4>
+            <p class="text-xs text-gray-300 mt-0.5">Corporate, sleek</p>
+          </button>
+          <button type="button" class="style-card relative rounded-xl p-4 text-left transition-all duration-200 border-2 border-yellow-600 hover:border-orange-400 bg-gradient-to-br from-gray-900 to-black" data-value="dark-luxury" onclick="toggleStyleCard(this)">
+            <div class="h-12 mb-3 rounded-lg border border-yellow-600/50 flex items-center justify-center">
+              <div class="text-lg">✨</div>
+            </div>
+            <h4 class="font-semibold text-sm text-yellow-500">Dark & Luxury</h4>
+            <p class="text-xs text-gray-400 mt-0.5">Premium, upscale</p>
+          </button>
+          <button type="button" class="style-card relative rounded-xl p-4 text-left transition-all duration-200 border-2 border-stone-400 hover:border-orange-400 bg-gradient-to-br from-stone-200 to-stone-300" data-value="industrial-rugged" onclick="toggleStyleCard(this)">
+            <div class="h-12 mb-3 rounded-lg border border-stone-400 flex items-center justify-center bg-stone-100">
+              <div class="text-lg">🔧</div>
+            </div>
+            <h4 class="font-semibold text-sm text-stone-800">Industrial</h4>
+            <p class="text-xs text-stone-600 mt-0.5">Rugged, strong</p>
+          </button>
+        </div>
+      </div>
+
+      <!-- Scroll hint - after first question -->
+      <div class="text-center py-2 text-gray-400 text-sm">
+        ↓ Keep scrolling - more questions below ↓
+      </div>
+
+      <!-- Style Reasons -->
+      <div class="mb-8 bg-white rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">What draws you to that style? <span class="text-red-500">*</span></h3>
+        <p class="text-sm text-gray-500 mb-4">Select all that apply</p>
+        <div class="flex flex-wrap gap-2" id="style-reasons">
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="clean-layout" onclick="toggleChip(this, 'styleReasons')">Clean layout</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="strong-colors" onclick="toggleChip(this, 'styleReasons')">Strong colors</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="good-photos" onclick="toggleChip(this, 'styleReasons')">Good photos</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="easy-navigation" onclick="toggleChip(this, 'styleReasons')">Easy navigation</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="modern-look" onclick="toggleChip(this, 'styleReasons')">Modern look</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="trustworthy-feel" onclick="toggleChip(this, 'styleReasons')">Trustworthy feel</button>
+        </div>
+      </div>
+
+      <!-- Inspiration URLs (Optional) -->
+      <div class="bg-white rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">Any websites you love? <span class="text-gray-400 text-sm font-normal">(Optional)</span></h3>
+        <p class="text-sm text-gray-500 mb-4">Share websites that inspire you - add as many as you'd like</p>
+        <div class="space-y-3" id="inspiration-urls">
+          <div class="flex gap-2 url-row">
+            <input type="url" placeholder="https://example.com" class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+            <button type="button" onclick="removeUrlRow(this)" class="px-3 py-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors" title="Remove">✕</button>
+          </div>
+          <div class="flex gap-2 url-row">
+            <input type="url" placeholder="https://example.com" class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+            <button type="button" onclick="removeUrlRow(this)" class="px-3 py-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors" title="Remove">✕</button>
+          </div>
+          <div class="flex gap-2 url-row">
+            <input type="url" placeholder="https://example.com" class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+            <button type="button" onclick="removeUrlRow(this)" class="px-3 py-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors" title="Remove">✕</button>
+          </div>
+        </div>
+        <button type="button" onclick="addUrlRow()" class="mt-3 inline-flex items-center gap-2 px-4 py-2 text-orange-600 hover:text-orange-700 hover:bg-orange-50 rounded-lg font-medium transition-colors">
+          + Add another website
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 2: What to Avoid -->
+    <div class="step" data-step="2">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">What do you hate?</h2>
+        <p class="text-gray-500">Help us understand what to avoid.</p>
+      </div>
+
+      <!-- Pet Peeves -->
+      <div class="mb-8 bg-white rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">Website pet peeves <span class="text-red-500">*</span></h3>
+        <p class="text-sm text-gray-500 mb-4">Select all that apply - be honest!</p>
+        <div class="flex flex-wrap gap-2" id="avoid-features">
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="cluttered" onclick="toggleChip(this, 'avoidFeatures')">Cluttered/busy</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="outdated" onclick="toggleChip(this, 'avoidFeatures')">Looks outdated</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="hard-to-navigate" onclick="toggleChip(this, 'avoidFeatures')">Hard to navigate</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="slow-loading" onclick="toggleChip(this, 'avoidFeatures')">Slow loading</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="too-much-text" onclick="toggleChip(this, 'avoidFeatures')">Too much text</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="annoying-popups" onclick="toggleChip(this, 'avoidFeatures')">Annoying popups</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="cheap-unprofessional" onclick="toggleChip(this, 'avoidFeatures')">Cheap/unprofessional</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="stock-photos" onclick="toggleChip(this, 'avoidFeatures')">Stock photo overload</button>
+        </div>
+      </div>
+
+      <!-- Dealbreakers -->
+      <div class="bg-white rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">Anything else to avoid? <span class="text-gray-400 text-sm font-normal">(Optional)</span></h3>
+        <p class="text-sm text-gray-500 mb-4">Specific things you'd hate to see</p>
+        <textarea placeholder="e.g., 'No sliders', 'Don't use blue', 'No stock photos of handshakes'..." class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 min-h-[100px] resize-none" id="dealbreakers"></textarea>
+      </div>
+    </div>
+
+    <!-- Step 3: Challenges -->
+    <div class="step" data-step="3">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">What's not working?</h2>
+        <p class="text-gray-500">Understanding your challenges helps us build something that solves them.</p>
+      </div>
+
+      <!-- Challenges (Multi-select) -->
+      <div class="mb-8 bg-white rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">What are your biggest challenges? <span class="text-red-500">*</span></h3>
+        <p class="text-sm text-gray-500 mb-4">Select all that apply</p>
+        <div class="flex flex-wrap gap-2" id="challenges">
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="more-leads" onclick="toggleChip(this, 'challenges')">Need more leads/customers</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="build-credibility" onclick="toggleChip(this, 'challenges')">Build credibility & trust</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="stand-out" onclick="toggleChip(this, 'challenges')">Stand out from competition</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="explain-services" onclick="toggleChip(this, 'challenges')">Hard to explain what I do</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="professional-presence" onclick="toggleChip(this, 'challenges')">Need a professional presence</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="convert-visitors" onclick="toggleChip(this, 'challenges')">Convert website visitors</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="seo-visibility" onclick="toggleChip(this, 'challenges')">SEO / Google visibility</button>
+        </div>
+      </div>
+
+      <!-- Other Frustrations -->
+      <div class="mb-8 bg-white rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">Any other frustrations? <span class="text-gray-400 text-sm font-normal">(Optional)</span></h3>
+        <p class="text-sm text-gray-500 mb-4">Select all that apply</p>
+        <div class="flex flex-wrap gap-2" id="frustrations">
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="site-outdated" onclick="toggleChip(this, 'otherFrustrations')">Current site is outdated</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="no-google" onclick="toggleChip(this, 'otherFrustrations')">Not showing up on Google</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="not-mobile" onclick="toggleChip(this, 'otherFrustrations')">Doesn't work on mobile</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="embarrassed" onclick="toggleChip(this, 'otherFrustrations')">Embarrassed to share link</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="no-website" onclick="toggleChip(this, 'otherFrustrations')">Don't have a website yet</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="hard-to-update" onclick="toggleChip(this, 'otherFrustrations')">Hard to update myself</button>
+        </div>
+      </div>
+
+      <!-- Problem Impact -->
+      <div class="bg-white rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">How is this affecting your business? <span class="text-gray-400 text-sm font-normal">(Optional)</span></h3>
+        <textarea placeholder="e.g., 'Losing customers to competitors with better sites'..." class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 min-h-[100px] resize-none" id="problem-impact"></textarea>
+      </div>
+    </div>
+
+    <!-- Step 4: Needs -->
+    <div class="step" data-step="4">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">What do you need?</h2>
+        <p class="text-gray-500">Let's scope out your website.</p>
+      </div>
+
+      <!-- Pages Needed -->
+      <div class="mb-8 bg-white rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">What pages do you need? <span class="text-red-500">*</span></h3>
+        <p class="text-sm text-gray-500 mb-4">We've pre-selected the essentials. Add or remove as needed.</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="pages">
+          <button type="button" class="option-chip selected flex items-center gap-2 p-3 rounded-lg text-sm font-medium transition-all text-left border-2 cursor-not-allowed" data-value="home" disabled>
+            <span class="w-5 h-5 rounded bg-orange-500 flex items-center justify-center text-white text-xs">✓</span>
+            <span>Home</span>
+          </button>
+          <button type="button" class="option-chip selected flex items-center gap-2 p-3 rounded-lg text-sm font-medium transition-all text-left border-2" data-value="about" onclick="togglePage(this)">
+            <span class="checkmark w-5 h-5 rounded bg-orange-500 flex items-center justify-center text-white text-xs">✓</span>
+            <span>About Us</span>
+          </button>
+          <button type="button" class="option-chip selected flex items-center gap-2 p-3 rounded-lg text-sm font-medium transition-all text-left border-2" data-value="services" onclick="togglePage(this)">
+            <span class="checkmark w-5 h-5 rounded bg-orange-500 flex items-center justify-center text-white text-xs">✓</span>
+            <span>Services</span>
+          </button>
+          <button type="button" class="option-chip selected flex items-center gap-2 p-3 rounded-lg text-sm font-medium transition-all text-left border-2" data-value="contact" onclick="togglePage(this)">
+            <span class="checkmark w-5 h-5 rounded bg-orange-500 flex items-center justify-center text-white text-xs">✓</span>
+            <span>Contact</span>
+          </button>
+          <button type="button" class="option-chip flex items-center gap-2 p-3 rounded-lg text-sm font-medium transition-all text-left border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="gallery" onclick="togglePage(this)">
+            <span class="checkmark w-5 h-5 rounded border-2 border-gray-300 flex items-center justify-center text-white text-xs"></span>
+            <span>Gallery</span>
+          </button>
+          <button type="button" class="option-chip flex items-center gap-2 p-3 rounded-lg text-sm font-medium transition-all text-left border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="testimonials" onclick="togglePage(this)">
+            <span class="checkmark w-5 h-5 rounded border-2 border-gray-300 flex items-center justify-center text-white text-xs"></span>
+            <span>Reviews</span>
+          </button>
+          <button type="button" class="option-chip flex items-center gap-2 p-3 rounded-lg text-sm font-medium transition-all text-left border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="faq" onclick="togglePage(this)">
+            <span class="checkmark w-5 h-5 rounded border-2 border-gray-300 flex items-center justify-center text-white text-xs"></span>
+            <span>FAQ</span>
+          </button>
+          <button type="button" class="option-chip flex items-center gap-2 p-3 rounded-lg text-sm font-medium transition-all text-left border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="pricing" onclick="togglePage(this)">
+            <span class="checkmark w-5 h-5 rounded border-2 border-gray-300 flex items-center justify-center text-white text-xs"></span>
+            <span>Pricing</span>
+          </button>
+          <button type="button" class="option-chip flex items-center gap-2 p-3 rounded-lg text-sm font-medium transition-all text-left border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="blog" onclick="togglePage(this)">
+            <span class="checkmark w-5 h-5 rounded border-2 border-gray-300 flex items-center justify-center text-white text-xs"></span>
+            <span>Blog</span>
+          </button>
+        </div>
+        <!-- Other pages input -->
+        <div class="mt-4">
+          <label class="text-sm text-gray-600 mb-2 block">Other pages you need:</label>
+          <input type="text" id="other-pages" placeholder="e.g., Careers, Events, Resources..." class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" oninput="formData.otherPages = this.value">
+        </div>
+      </div>
+
+      <!-- Must-Have Features -->
+      <div class="mb-8 bg-white rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">Must-have features <span class="text-red-500">*</span></h3>
+        <p class="text-sm text-gray-500 mb-4">What functionality is essential?</p>
+        <div class="flex flex-wrap gap-2" id="features">
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="contact-form" onclick="toggleChip(this, 'mustHaveFeatures')">Contact form</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="click-to-call" onclick="toggleChip(this, 'mustHaveFeatures')">Click-to-call</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="map" onclick="toggleChip(this, 'mustHaveFeatures')">Map/directions</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="photo-gallery" onclick="toggleChip(this, 'mustHaveFeatures')">Photo gallery</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="reviews" onclick="toggleChip(this, 'mustHaveFeatures')">Reviews</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="online-booking" onclick="toggleChip(this, 'mustHaveFeatures')">Online booking</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="quote-request" onclick="toggleChip(this, 'mustHaveFeatures')">Quote request</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="social-links" onclick="toggleChip(this, 'mustHaveFeatures')">Social links</button>
+        </div>
+        <!-- Other features input -->
+        <div class="mt-4">
+          <label class="text-sm text-gray-600 mb-2 block">Other features you need:</label>
+          <input type="text" id="other-features" placeholder="e.g., Newsletter signup, Live chat, Video player..." class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" oninput="formData.otherFeatures = this.value">
+        </div>
+      </div>
+
+      <!-- Service Count -->
+      <div class="mb-8 bg-white rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">How many services do you offer? <span class="text-red-500">*</span></h3>
+        <p class="text-sm text-gray-500 mb-4">This helps us plan your services page</p>
+        <div class="flex flex-wrap gap-3" id="service-count">
+          <button type="button" class="service-btn px-6 py-3 rounded-lg font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="1-3" onclick="selectSingle(this, 'serviceCount', 'service-count', 'service-btn')">1-3 services</button>
+          <button type="button" class="service-btn px-6 py-3 rounded-lg font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="4-8" onclick="selectSingle(this, 'serviceCount', 'service-count', 'service-btn')">4-8 services</button>
+          <button type="button" class="service-btn px-6 py-3 rounded-lg font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="9+" onclick="selectSingle(this, 'serviceCount', 'service-count', 'service-btn')">9+ services</button>
+        </div>
+        <!-- Services list -->
+        <div class="mt-4">
+          <label class="text-sm text-gray-600 mb-2 block">What services do you offer? <span class="text-gray-400">(Optional)</span></label>
+          <textarea id="services-list" placeholder="e.g., Roof Repair, Gutter Cleaning, Emergency Services, New Roof Installation..." class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 min-h-[80px] resize-none" oninput="formData.servicesList = this.value"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 5: Goals -->
+    <div class="step" data-step="5">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">What does success look like?</h2>
+        <p class="text-gray-500">Almost done! Tell us your main goal and timeline.</p>
+      </div>
+
+      <!-- Website Goals (Multi-select) -->
+      <div class="mb-8 bg-white rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">What should your website do? <span class="text-red-500">*</span></h3>
+        <p class="text-sm text-gray-500 mb-4">Select all that apply - most websites have multiple goals</p>
+        <div class="flex flex-wrap gap-2" id="goals">
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="more-calls" onclick="toggleChip(this, 'websiteGoals')">Get more phone calls</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="more-leads" onclick="toggleChip(this, 'websiteGoals')">Generate leads/inquiries</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="book-appointments" onclick="toggleChip(this, 'websiteGoals')">Book appointments online</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="build-trust" onclick="toggleChip(this, 'websiteGoals')">Build trust & credibility</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="showcase-work" onclick="toggleChip(this, 'websiteGoals')">Showcase my work</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="explain-services" onclick="toggleChip(this, 'websiteGoals')">Explain my services clearly</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="sell-online" onclick="toggleChip(this, 'websiteGoals')">Sell products/services</button>
+          <button type="button" class="option-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="show-reviews" onclick="toggleChip(this, 'websiteGoals')">Show off reviews</button>
+        </div>
+      </div>
+
+      <!-- Booking Question -->
+      <div class="mb-8 bg-white rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">Online booking/scheduling</h3>
+        <p class="text-sm text-gray-500 mb-4">Do you want customers to book appointments on your website?</p>
+        <div class="space-y-3">
+          <div class="flex flex-wrap gap-3" id="wants-booking">
+            <button type="button" class="service-btn px-5 py-2.5 rounded-lg font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="yes" onclick="selectSingle(this, 'wantsBooking', 'wants-booking', 'service-btn')">Yes, I want online booking</button>
+            <button type="button" class="service-btn px-5 py-2.5 rounded-lg font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="no" onclick="selectSingle(this, 'wantsBooking', 'wants-booking', 'service-btn')">No, phone/email is fine</button>
+            <button type="button" class="service-btn px-5 py-2.5 rounded-lg font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="maybe" onclick="selectSingle(this, 'wantsBooking', 'wants-booking', 'service-btn')">Not sure yet</button>
+          </div>
+          <div class="pt-2">
+            <p class="text-sm text-gray-600 mb-2">Do you currently have online booking?</p>
+            <div class="flex flex-wrap gap-3" id="has-booking">
+              <button type="button" class="timeline-btn px-4 py-2 rounded-lg text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="yes" onclick="selectSingle(this, 'hasBooking', 'has-booking', 'timeline-btn')">Yes</button>
+              <button type="button" class="timeline-btn px-4 py-2 rounded-lg text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="no" onclick="selectSingle(this, 'hasBooking', 'has-booking', 'timeline-btn')">No</button>
+              <button type="button" class="timeline-btn px-4 py-2 rounded-lg text-sm font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-orange-400" data-value="not-working" onclick="selectSingle(this, 'hasBooking', 'has-booking', 'timeline-btn')">Yes but it's not working well</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Additional Notes -->
+      <div class="bg-white rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">Anything else we should know? <span class="text-gray-400 text-sm font-normal">(Optional)</span></h3>
+        <textarea placeholder="Special requests, upcoming events, unique aspects of your business..." class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 min-h-[120px] resize-none" id="additional-notes"></textarea>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Navigation -->
+  <footer class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-lg">
+    <div class="max-w-2xl mx-auto flex items-center justify-between">
+      <button id="btn-back" onclick="prevStep()" class="inline-flex items-center gap-2 px-5 py-2.5 text-gray-600 hover:text-gray-900 font-medium rounded-lg hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-transparent" disabled>
+        ← Back
+      </button>
+      <span id="step-counter" class="text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">1 of 5</span>
+      <button id="btn-next" onclick="nextStep()" class="inline-flex items-center gap-2 px-6 py-2.5 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-orange-500 transition-colors">
+        Next →
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    // State
+    let currentStep = 1;
+    const totalSteps = 5;
+    const formData = {
+      styleDirections: [],
+      styleReasons: [],
+      inspirationUrls: [],
+      avoidFeatures: [],
+      dealbreakers: '',
+      challenges: [],
+      otherFrustrations: [],
+      problemImpact: '',
+      pagesNeeded: ['home', 'about', 'services', 'contact'],
+      otherPages: '',
+      mustHaveFeatures: [],
+      otherFeatures: '',
+      serviceCount: null,
+      servicesList: '',
+      websiteGoals: [],
+      wantsBooking: null,
+      hasBooking: null,
+      additionalNotes: ''
+    };
+
+    const stepLabels = ['Style', 'Avoid', 'Challenges', 'Needs', 'Goals'];
+
+    // Go to specific step (only if previously completed)
+    function goToStep(step) {
+      if (step < currentStep) {
+        currentStep = step;
+        updateUI();
+        window.scrollTo(0, 0);
+      }
+    }
+
+    // Navigation
+    function updateUI() {
+      // Update steps visibility
+      document.querySelectorAll('.step').forEach(s => {
+        s.classList.remove('active');
+        if (parseInt(s.dataset.step) === currentStep) {
+          s.classList.add('active');
+        }
+      });
+
+      // Update progress bar
+      const progress = ((currentStep - 1) / (totalSteps - 1)) * 100;
+      document.getElementById('progress-line').style.width = progress + '%';
+
+      // Update step indicators
+      document.querySelectorAll('.step-indicator').forEach(indicator => {
+        const step = parseInt(indicator.dataset.step);
+        const circle = indicator.querySelector('div');
+        const label = indicator.querySelector('span');
+
+        if (step < currentStep) {
+          circle.className = 'w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium bg-orange-500 text-white';
+          circle.innerHTML = '✓';
+          if (label) label.className = 'mt-2 text-xs font-medium text-gray-600 hidden sm:block';
+        } else if (step === currentStep) {
+          circle.className = 'w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium bg-orange-500 text-white ring-4 ring-orange-100';
+          circle.textContent = step;
+          if (label) label.className = 'mt-2 text-xs font-medium text-orange-600 hidden sm:block';
+        } else {
+          circle.className = 'w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium bg-gray-300 text-gray-600';
+          circle.textContent = step;
+          if (label) label.className = 'mt-2 text-xs font-medium text-gray-400 hidden sm:block';
+        }
+      });
+
+      // Update mobile step indicator
+      document.getElementById('mobile-step').textContent = `Step ${currentStep} of ${totalSteps}: ${stepLabels[currentStep - 1]}`;
+
+      // Update step counter
+      document.getElementById('step-counter').textContent = `${currentStep} of ${totalSteps}`;
+
+      // Update back button
+      document.getElementById('btn-back').disabled = currentStep === 1;
+
+      // Update next button
+      const nextBtn = document.getElementById('btn-next');
+      const canProceed = validateStep(currentStep);
+      nextBtn.disabled = !canProceed;
+
+      if (currentStep === totalSteps) {
+        nextBtn.innerHTML = 'Complete ✓';
+        nextBtn.className = 'inline-flex items-center gap-2 px-6 py-2.5 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors';
+      } else {
+        nextBtn.innerHTML = 'Next →';
+        nextBtn.className = 'inline-flex items-center gap-2 px-6 py-2.5 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 disabled:opacity-40 disabled:cursor-not-allowed transition-colors';
+      }
+
+      // Debug
+      console.log('Step:', currentStep, 'Can proceed:', canProceed, 'Data:', formData);
+    }
+
+    function validateStep(step) {
+      switch (step) {
+        case 1:
+          return formData.styleDirections.length > 0 && formData.styleReasons.length > 0;
+        case 2:
+          return formData.avoidFeatures.length > 0;
+        case 3:
+          return formData.challenges.length > 0;
+        case 4:
+          return formData.pagesNeeded.length > 0 && formData.mustHaveFeatures.length > 0 && formData.serviceCount;
+        case 5:
+          return formData.websiteGoals.length > 0;
+        default:
+          return false;
+      }
+    }
+
+    function nextStep() {
+      if (currentStep < totalSteps && validateStep(currentStep)) {
+        currentStep++;
+        updateUI();
+        window.scrollTo(0, 0);
+      } else if (currentStep === totalSteps && validateStep(currentStep)) {
+        complete();
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 1) {
+        currentStep--;
+        updateUI();
+        window.scrollTo(0, 0);
+      }
+    }
+
+    async function complete() {
+      // Collect all text inputs
+      collectUrls();
+      formData.dealbreakers = document.getElementById('dealbreakers')?.value || '';
+      formData.problemImpact = document.getElementById('problem-impact')?.value || '';
+      formData.servicesList = document.getElementById('services-list')?.value || '';
+      formData.additionalNotes = document.getElementById('additional-notes')?.value || '';
+
+      formData.completedAt = new Date().toISOString();
+
+      // Get lead ID from landing page if available
+      const leadId = localStorage.getItem('leadId');
+      if (leadId) {
+        formData.leadId = leadId;
+      }
+
+      // Save to localStorage as backup
+      localStorage.setItem('discovery-questionnaire', JSON.stringify(formData));
+      console.log('Form Data:', formData);
+
+      // Send to API
+      try {
+        const response = await fetch('/api/discovery', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+        console.log('API Response:', result);
+
+        if (!result.success) {
+          console.error('Failed to save to database:', result.message);
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error);
+      }
+
+      // Redirect to thank-you page
+      window.location.href = '/thank-you';
+    }
+
+    // Selection handlers
+    function toggleStyleCard(btn) {
+      const value = btn.dataset.value;
+      btn.classList.toggle('selected');
+
+      if (formData.styleDirections.includes(value)) {
+        formData.styleDirections = formData.styleDirections.filter(v => v !== value);
+      } else {
+        formData.styleDirections.push(value);
+      }
+      updateUI();
+    }
+
+    function toggleChip(btn, field) {
+      const value = btn.dataset.value;
+      btn.classList.toggle('selected');
+
+      if (formData[field].includes(value)) {
+        formData[field] = formData[field].filter(v => v !== value);
+      } else {
+        formData[field].push(value);
+      }
+      updateUI();
+    }
+
+    function selectSingle(btn, field, containerId, btnClass) {
+      const value = btn.dataset.value;
+      const container = document.getElementById(containerId);
+
+      // Remove selected from all in container
+      if (btnClass) {
+        container.querySelectorAll('.' + btnClass).forEach(b => {
+          b.classList.remove('selected');
+        });
+      } else {
+        container.querySelectorAll('.option-card').forEach(card => {
+          card.classList.remove('selected');
+          const circle = card.querySelector('div');
+          if (circle) {
+            circle.className = 'shrink-0 w-6 h-6 mt-0.5 rounded-full border-2 flex items-center justify-center transition-all border-gray-300 bg-white';
+            circle.innerHTML = '';
+          }
+        });
+      }
+
+      // Add selected to clicked
+      btn.classList.add('selected');
+
+      // Update circle for option-card
+      if (!btnClass) {
+        const circle = btn.querySelector('div');
+        if (circle) {
+          circle.className = 'shrink-0 w-6 h-6 mt-0.5 rounded-full border-2 flex items-center justify-center transition-all border-orange-500 bg-orange-500';
+          circle.innerHTML = '<span class="text-white text-xs">✓</span>';
+        }
+      }
+
+      formData[field] = value;
+      updateUI();
+    }
+
+    function togglePage(btn) {
+      const page = btn.dataset.value;
+      if (page === 'home') return;
+
+      const isSelected = btn.classList.contains('selected');
+      const checkmark = btn.querySelector('.checkmark');
+
+      if (isSelected) {
+        btn.classList.remove('selected');
+        formData.pagesNeeded = formData.pagesNeeded.filter(p => p !== page);
+        if (checkmark) {
+          checkmark.className = 'checkmark w-5 h-5 rounded border-2 border-gray-300 flex items-center justify-center text-white text-xs';
+          checkmark.innerHTML = '';
+        }
+      } else {
+        btn.classList.add('selected');
+        formData.pagesNeeded.push(page);
+        if (checkmark) {
+          checkmark.className = 'checkmark w-5 h-5 rounded bg-orange-500 flex items-center justify-center text-white text-xs';
+          checkmark.innerHTML = '✓';
+        }
+      }
+      updateUI();
+    }
+
+    // URL row functions
+    function addUrlRow() {
+      const container = document.getElementById('inspiration-urls');
+      const newRow = document.createElement('div');
+      newRow.className = 'flex gap-2 url-row';
+      newRow.innerHTML = `
+        <input type="url" placeholder="https://example.com" class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+        <button type="button" onclick="removeUrlRow(this)" class="px-3 py-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors" title="Remove">✕</button>
+      `;
+      container.appendChild(newRow);
+    }
+
+    function removeUrlRow(btn) {
+      const container = document.getElementById('inspiration-urls');
+      const rows = container.querySelectorAll('.url-row');
+      // Keep at least one row
+      if (rows.length > 1) {
+        btn.parentElement.remove();
+      } else {
+        // Just clear the input if it's the last row
+        btn.parentElement.querySelector('input').value = '';
+      }
+    }
+
+    // Collect URLs before completion
+    function collectUrls() {
+      const inputs = document.querySelectorAll('#inspiration-urls input');
+      formData.inspirationUrls = [];
+      inputs.forEach(input => {
+        if (input.value.trim()) {
+          formData.inspirationUrls.push(input.value.trim());
+        }
+      });
+    }
+
+    // Initialize
+    updateUI();
+  </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+{
+  "id": "2",
+  "slug": "swift-movers",
+  "name": "Swift Movers",
+  "email": "info@swiftmovers.com",
+  "phone": "(512) 555-MOVE",
+  "status": "prospect",
+  "template": "service-business",
+  "colors": {
+    "primary": "#ea580c",
+    "secondary": "#c2410c",
+    "accent": "#fbbf24",
+    "background": "#ffffff",
+    "text": "#1c1917"
+  },
+  "content": {
+    "hero": {
+      "headline": "Austin's Most Trusted Moving Company",
+      "subheadline": "Local & Long-Distance Moves • Free Estimates • Licensed & Insured",
+      "cta": "Get Free Quote",
+      "ctaLink": "#contact"
+    },
+    "about": {
+      "title": "Moving Made Easy",
+      "text": "Since 2010, Swift Movers has helped over 15,000 families and businesses relocate across Texas and beyond. Our trained crews handle your belongings with the care they deserve, and our transparent pricing means no surprises on moving day. From a studio apartment to a 10,000 sq ft home, we've got you covered."
+    },
+    "services": [
+      {
+        "name": "Local Moving",
+        "description": "Same-day and scheduled moves within the Austin metro area. Flexible hourly rates.",
+        "icon": "Home"
+      },
+      {
+        "name": "Long-Distance Moving",
+        "description": "Interstate relocations with GPS tracking and guaranteed delivery windows.",
+        "icon": "Zap"
+      },
+      {
+        "name": "Packing Services",
+        "description": "Professional packing with high-quality materials. We pack, you relax.",
+        "icon": "Shield"
+      },
+      {
+        "name": "Storage Solutions",
+        "description": "Climate-controlled storage facilities for short or long-term needs.",
+        "icon": "Home"
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "Michael T.",
+        "content": "Moved our family of 5 across state lines. The crew was professional, on time, and nothing was damaged. Best moving experience we've ever had!",
+        "rating": 5
+      },
+      {
+        "name": "Jennifer L.",
+        "content": "They moved our office over a weekend with zero downtime. Highly organized and efficient. Will use again!",
+        "rating": 5
+      },
+      {
+        "name": "David & Maria S.",
+        "content": "The quote was accurate, the team was friendly, and they even helped us arrange furniture. 10/10 recommend!",
+        "rating": 5
+      }
+    ],
+    "contact": {
+      "phone": "(512) 555-MOVE",
+      "email": "info@swiftmovers.com",
+      "address": "8500 Shoal Creek Blvd, Austin, TX 78757",
+      "hours": "Mon-Sat: 7AM-8PM, Sun: 8AM-5PM"
+    },
+    "social": {
+      "facebook": "https://facebook.com/swiftmovers",
+      "instagram": "https://instagram.com/swiftmovers",
+      "youtube": "https://youtube.com/swiftmovers"
+    }
+  },
+  "createdAt": "2026-01-22T00:00:00Z",
+  "updatedAt": "2026-01-22T00:00:00Z"
+}

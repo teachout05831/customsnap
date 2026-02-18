@@ -1,0 +1,79 @@
+{
+  "id": "3",
+  "slug": "greenscape-landscaping",
+  "name": "GreenScape Landscaping",
+  "email": "hello@greenscapetx.com",
+  "phone": "(512) 555-LAWN",
+  "status": "prospect",
+  "template": "service-business",
+  "colors": {
+    "primary": "#16a34a",
+    "secondary": "#15803d",
+    "accent": "#84cc16",
+    "background": "#fafaf9",
+    "text": "#1c1917"
+  },
+  "content": {
+    "hero": {
+      "headline": "Transform Your Outdoor Space",
+      "subheadline": "Custom Landscape Design • Installation • Maintenance • Irrigation",
+      "cta": "Free Design Consultation",
+      "ctaLink": "#contact"
+    },
+    "about": {
+      "title": "Crafting Beautiful Landscapes Since 2008",
+      "text": "At GreenScape, we believe your outdoor space should be an extension of your home. Our award-winning design team creates custom landscapes that blend beauty with functionality. From drought-resistant native gardens to lush tropical retreats, we bring your vision to life and maintain it year-round."
+    },
+    "services": [
+      {
+        "name": "Landscape Design",
+        "description": "Custom 3D designs tailored to your property, lifestyle, and budget. See your dream yard before we break ground.",
+        "icon": "Star"
+      },
+      {
+        "name": "Installation",
+        "description": "Expert installation of plants, trees, hardscaping, lighting, and irrigation systems.",
+        "icon": "Hammer"
+      },
+      {
+        "name": "Lawn Maintenance",
+        "description": "Weekly, bi-weekly, or monthly maintenance packages to keep your landscape pristine.",
+        "icon": "Settings"
+      },
+      {
+        "name": "Irrigation Systems",
+        "description": "Smart irrigation design, installation, and repair. Save water and keep plants thriving.",
+        "icon": "Droplets"
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "Patricia H.",
+        "content": "They transformed our boring backyard into an oasis. The outdoor kitchen and fire pit are now our favorite hangout spot!",
+        "rating": 5
+      },
+      {
+        "name": "Robert & Lynn M.",
+        "content": "Professional from design to completion. They stayed on budget and the results exceeded our expectations.",
+        "rating": 5
+      },
+      {
+        "name": "Carlos G.",
+        "content": "Our water bill dropped 40% after they installed the smart irrigation system. Plants look healthier too!",
+        "rating": 5
+      }
+    ],
+    "contact": {
+      "phone": "(512) 555-LAWN",
+      "email": "hello@greenscapetx.com",
+      "address": "2200 S Congress Ave, Austin, TX 78704",
+      "hours": "Mon-Fri: 8AM-6PM, Sat: 9AM-3PM"
+    },
+    "social": {
+      "facebook": "https://facebook.com/greenscapetx",
+      "instagram": "https://instagram.com/greenscapetx"
+    }
+  },
+  "createdAt": "2026-01-22T00:00:00Z",
+  "updatedAt": "2026-01-22T00:00:00Z"
+}

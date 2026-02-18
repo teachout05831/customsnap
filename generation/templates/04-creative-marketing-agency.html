@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Marketing Agency Template</title>
+    <style>
+        /* Inspired by Superside, inBeat, and top marketing agencies */
+        :root {
+            --primary: #ff4d4d;
+            --primary-dark: #e63946;
+            --accent: #ffd60a;
+            --text-dark: #1a1a2e;
+            --text-body: #4a4a68;
+            --text-muted: #7a7a8c;
+            --bg-white: #ffffff;
+            --bg-cream: #fefaf6;
+            --bg-dark: #1a1a2e;
+            --border: #eaeaef;
+            --radius: 16px;
+            --radius-lg: 24px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-body);
+            background: var(--bg-white);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 20px 0;
+            transition: all 0.3s;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.9375rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-dark {
+            background: var(--text-dark);
+            color: white;
+        }
+
+        .btn-dark:hover {
+            background: #2d2d4a;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--text-dark);
+            color: var(--text-dark);
+        }
+
+        .btn-outline:hover {
+            background: var(--text-dark);
+            color: white;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 180px 0 120px;
+            background: var(--bg-cream);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative shapes */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            width: 300px;
+            height: 300px;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.3;
+            filter: blur(60px);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 20%;
+            left: 10%;
+            width: 200px;
+            height: 200px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.2;
+            filter: blur(60px);
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 32px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 .highlight {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            width: 100%;
+            height: 16px;
+            background: var(--accent);
+            z-index: -1;
+            transform: rotate(-1deg);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        .hero-metrics {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric strong {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1;
+        }
+
+        .metric span {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* ===== LOGOS ===== */
+        .logos {
+            padding: 80px 0;
+            background: var(--bg-white);
+        }
+
+        .logos p {
+            text-align: center;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .logos-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 64px;
+            flex-wrap: wrap;
+        }
+
+        .logos-grid img {
+            height: 32px;
+            opacity: 0.4;
+            transition: opacity 0.3s;
+        }
+
+        .logos-grid img:hover {
+            opacity: 1;
+        }
+
+        /* ===== SERVICES ===== */
+        .services {
+            padding: 120px 0;
+        }
+
+        .section-eyebrow {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .section-header {
+            max-width: 560px;
+            margin-bottom: 60px;
+        }
+
+        .section-header.centered {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.125rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .service-card {
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            background: var(--bg-cream);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--primary);
+            transition: height 0.3s;
+        }
+
+        .service-card:hover::before {
+            height: 100%;
+        }
+
+        .service-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--border);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .service-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .service-card a:hover {
+            gap: 12px;
+        }
+
+        /* ===== CASE STUDIES ===== */
+        .case-studies {
+            padding: 120px 0;
+            background: var(--bg-dark);
+            color: white;
+        }
+
+        .case-studies .section-eyebrow {
+            color: var(--accent);
+        }
+
+        .case-studies .section-header p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .case-card {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: rgba(255,255,255,0.05);
+            transition: all 0.3s;
+        }
+
+        .case-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255,255,255,0.1);
+        }
+
+        .case-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .case-card-content {
+            padding: 28px;
+        }
+
+        .case-card .tag {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .case-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .case-card .metric {
+            display: flex;
+            gap: 24px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .case-card .metric div strong {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        .case-card .metric div span {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            padding: 120px 0;
+        }
+
+        .testimonial-featured {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            background: var(--bg-cream);
+            border-radius: var(--radius-lg);
+            padding: 60px;
+        }
+
+        .testimonial-image img {
+            width: 100%;
+            border-radius: var(--radius);
+        }
+
+        .testimonial-content .stars {
+            color: var(--accent);
+            font-size: 1.25rem;
+            margin-bottom: 24px;
+        }
+
+        .testimonial-content blockquote {
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            line-height: 1.4;
+            margin-bottom: 32px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .testimonial-author img {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+        }
+
+        .testimonial-author .name {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 1.125rem;
+        }
+
+        .testimonial-author .title {
+            color: var(--text-muted);
+        }
+
+        /* ===== PROCESS ===== */
+        .process {
+            padding: 120px 0;
+            background: var(--bg-cream);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        .process-step {
+            position: relative;
+        }
+
+        .process-step::after {
+            content: '→';
+            position: absolute;
+            top: 40px;
+            right: -16px;
+            font-size: 1.5rem;
+            color: var(--border);
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .process-step h3 {
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .process-step p {
+            color: var(--text-muted);
+            font-size: 0.9375rem;
+        }
+
+        /* ===== TEAM ===== */
+        .team {
+            padding: 120px 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            filter: grayscale(100%);
+            transition: all 0.3s;
+        }
+
+        .team-member:hover img {
+            filter: grayscale(0%);
+        }
+
+        .team-member h3 {
+            font-size: 1.125rem;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .team-member p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* ===== CTA ===== */
+        .cta {
+            padding: 120px 0;
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .cta::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .cta .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .cta p {
+            font-size: 1.25rem;
+            opacity: 0.8;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta .btn-primary {
+            background: white;
+            color: var(--text-dark);
+        }
+
+        .cta .btn-primary:hover {
+            background: var(--accent);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: 80px 0 40px;
+            background: var(--bg-dark);
+            color: white;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 64px;
+            margin-bottom: 64px;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.6);
+            margin-top: 16px;
+            font-size: 0.9375rem;
+            max-width: 300px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: background 0.2s;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+        }
+
+        .footer h4 {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer li {
+            margin-bottom: 12px;
+        }
+
+        .footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            transition: color 0.2s;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.875rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .services-grid,
+            .case-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonial-featured {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid,
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-step::after {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 140px 0 80px;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-metrics {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .services-grid,
+            .case-grid,
+            .process-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .cta h2 {
+                font-size: 2rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-brand p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Brand<span>Lab</span></a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="btn btn-primary">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    Top Rated Marketing Agency 2026
+                </div>
+                <h1>We Build Brands That <span class="highlight">Get Noticed</span></h1>
+                <p>A full-service creative agency that turns bold ideas into measurable results. Strategy, design, and digital marketing that actually works.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-dark">Start a Project</a>
+                    <a href="#work" class="btn btn-outline">View Our Work</a>
+                </div>
+                <div class="hero-metrics">
+                    <div class="metric">
+                        <strong>250+</strong>
+                        <span>Projects Delivered</span>
+                    </div>
+                    <div class="metric">
+                        <strong>98%</strong>
+                        <span>Client Satisfaction</span>
+                    </div>
+                    <div class="metric">
+                        <strong>$50M+</strong>
+                        <span>Revenue Generated</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOGOS -->
+    <section class="logos">
+        <div class="container">
+            <p>Trusted by industry leaders</p>
+            <div class="logos-grid">
+                <img src="https://placehold.co/120x40/1a1a2e/1a1a2e?text=Brand+1" alt="Brand 1">
+                <img src="https://placehold.co/120x40/1a1a2e/1a1a2e?text=Brand+2" alt="Brand 2">
+                <img src="https://placehold.co/120x40/1a1a2e/1a1a2e?text=Brand+3" alt="Brand 3">
+                <img src="https://placehold.co/120x40/1a1a2e/1a1a2e?text=Brand+4" alt="Brand 4">
+                <img src="https://placehold.co/120x40/1a1a2e/1a1a2e?text=Brand+5" alt="Brand 5">
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-eyebrow">What We Do</p>
+                <h2>Full-Service Creative Solutions</h2>
+                <p>From strategy to execution, we handle every aspect of your brand's digital presence.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <h3>Brand Strategy</h3>
+                    <p>We define your brand's purpose, positioning, and personality to stand out in crowded markets.</p>
+                    <a href="#">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <h3>Web Design & Development</h3>
+                    <p>Custom websites that look stunning, load fast, and convert visitors into customers.</p>
+                    <a href="#">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <h3>Digital Marketing</h3>
+                    <p>Data-driven campaigns across paid media, SEO, and social that deliver real ROI.</p>
+                    <a href="#">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">04</div>
+                    <h3>Content Creation</h3>
+                    <p>Scroll-stopping content from video production to photography and copywriting.</p>
+                    <a href="#">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">05</div>
+                    <h3>Social Media</h3>
+                    <p>Strategy, management, and growth for brands that want to own their social presence.</p>
+                    <a href="#">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">06</div>
+                    <h3>Conversion Optimization</h3>
+                    <p>A/B testing, UX research, and landing page optimization to maximize your results.</p>
+                    <a href="#">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDIES -->
+    <section class="case-studies" id="work">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-eyebrow">Our Work</p>
+                <h2>Results That Speak for Themselves</h2>
+                <p>See how we've helped brands achieve breakthrough growth.</p>
+            </div>
+            <div class="case-grid">
+                <div class="case-card">
+                    <img src="https://placehold.co/400x200/ff4d4d/white?text=TechFlow" alt="TechFlow Case Study">
+                    <div class="case-card-content">
+                        <span class="tag">SaaS</span>
+                        <h3>TechFlow: Complete Brand Refresh</h3>
+                        <div class="metric">
+                            <div>
+                                <strong>+312%</strong>
+                                <span>Lead Growth</span>
+                            </div>
+                            <div>
+                                <strong>+89%</strong>
+                                <span>Conversion Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <img src="https://placehold.co/400x200/ffd60a/1a1a2e?text=Urban+Eats" alt="Urban Eats Case Study">
+                    <div class="case-card-content">
+                        <span class="tag">Restaurant</span>
+                        <h3>Urban Eats: Launch Campaign</h3>
+                        <div class="metric">
+                            <div>
+                                <strong>50K+</strong>
+                                <span>App Downloads</span>
+                            </div>
+                            <div>
+                                <strong>$2.3M</strong>
+                                <span>First Month Revenue</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <img src="https://placehold.co/400x200/1a1a2e/white?text=FitPro" alt="FitPro Case Study">
+                    <div class="case-card-content">
+                        <span class="tag">Fitness</span>
+                        <h3>FitPro: Social Media Domination</h3>
+                        <div class="metric">
+                            <div>
+                                <strong>500K+</strong>
+                                <span>Followers Gained</span>
+                            </div>
+                            <div>
+                                <strong>12x</strong>
+                                <span>Engagement Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonial-featured">
+                <div class="testimonial-image">
+                    <img src="https://placehold.co/500x400/ffd60a/1a1a2e?text=Client+Photo" alt="Client testimonial">
+                </div>
+                <div class="testimonial-content">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"BrandLab transformed our entire digital presence. Our leads are up 400% and our brand finally reflects who we really are."</blockquote>
+                    <div class="testimonial-author">
+                        <img src="https://placehold.co/56x56/ff4d4d/white?text=SJ" alt="Sarah Johnson">
+                        <div>
+                            <div class="name">Sarah Johnson</div>
+                            <div class="title">CEO, TechFlow</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header centered">
+                <p class="section-eyebrow">Our Process</p>
+                <h2>How We Work</h2>
+                <p>A proven methodology that delivers results, every time.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-icon">🔍</div>
+                    <h3>Discovery</h3>
+                    <p>We dive deep into your business, audience, and competitors to understand the full picture.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">📋</div>
+                    <h3>Strategy</h3>
+                    <p>We develop a custom roadmap with clear goals, tactics, and timelines.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">🎨</div>
+                    <h3>Creation</h3>
+                    <p>Our team brings the strategy to life with stunning creative and flawless execution.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">📈</div>
+                    <h3>Optimization</h3>
+                    <p>We measure everything and continuously optimize for better results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="team" id="about">
+        <div class="container">
+            <div class="section-header centered">
+                <p class="section-eyebrow">Our Team</p>
+                <h2>The People Behind the Magic</h2>
+                <p>Meet the creative minds who'll bring your vision to life.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://placehold.co/300x300/ff4d4d/white?text=JD" alt="Jessica Davis">
+                    <h3>Jessica Davis</h3>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://placehold.co/300x300/ffd60a/1a1a2e?text=MK" alt="Michael Kim">
+                    <h3>Michael Kim</h3>
+                    <p>Creative Director</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://placehold.co/300x300/1a1a2e/white?text=ER" alt="Emily Roberts">
+                    <h3>Emily Roberts</h3>
+                    <p>Head of Strategy</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://placehold.co/300x300/ff4d4d/white?text=DL" alt="David Lee">
+                    <h3>David Lee</h3>
+                    <p>Lead Developer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Ready to Stand Out?</h2>
+            <p>Let's create something amazing together. Book a free strategy call to get started.</p>
+            <a href="#" class="btn btn-primary">Book Your Free Call</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo" style="color: white;">Brand<span>Lab</span></a>
+                    <p>A full-service creative agency that turns bold ideas into measurable results.</p>
+                    <div class="footer-social">
+                        <a href="#">Li</a>
+                        <a href="#">Tw</a>
+                        <a href="#">Ig</a>
+                        <a href="#">Be</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Brand Strategy</a></li>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">Content Creation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Work</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#">hello@brandlab.com</a></li>
+                        <li><a href="#">(555) 123-4567</a></li>
+                        <li><a href="#">123 Creative Way</a></li>
+                        <li><a href="#">Design City, DC 10001</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BrandLab. All rights reserved.</p>
+                <p><a href="#">Privacy</a> | <a href="#">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

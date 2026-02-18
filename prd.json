@@ -1,0 +1,669 @@
+{
+  "project": "WebsiteBuilder",
+  "version": "0.1.0",
+  "description": "Next.js-based website builder platform for creating client preview sites with templates and AI assistance",
+  "modules": [
+    {
+      "name": "Phase 1: Foundation",
+      "status": "in_progress",
+      "stories": [
+        {
+          "id": "FOUND-001",
+          "title": "Project Structure Setup",
+          "priority": 1,
+          "passes": true,
+          "acceptance_criteria": [
+            "Next.js 14+ project initialized with App Router at root",
+            "Tailwind CSS configured and working",
+            "TypeScript configured with strict mode",
+            "Folder structure matches ARCHITECTURE.md layout",
+            "Basic src/app/page.tsx renders without errors",
+            "npm run dev starts successfully on localhost:3000"
+          ]
+        },
+        {
+          "id": "FOUND-002",
+          "title": "Shadcn UI Components Setup",
+          "priority": 2,
+          "passes": true,
+          "acceptance_criteria": [
+            "Shadcn UI initialized with components.json",
+            "Button component at src/components/ui/button.tsx",
+            "Card component at src/components/ui/card.tsx",
+            "Input component at src/components/ui/input.tsx",
+            "Label component at src/components/ui/label.tsx",
+            "utils.ts with cn() helper at src/lib/utils.ts"
+          ]
+        },
+        {
+          "id": "FOUND-003",
+          "title": "Type Definitions",
+          "priority": 3,
+          "passes": true,
+          "acceptance_criteria": [
+            "Client type defined at src/types/index.ts",
+            "Template type defined with id, name, category, description, thumbnail",
+            "Page type defined with slug, title, content",
+            "ClientContent type for hero, services, about, contact sections",
+            "Status enum: PROSPECT, DEMO_SENT, APPROVED, IN_PROGRESS, DEPLOYED, REJECTED",
+            "ColorScheme type with primary, secondary, accent colors"
+          ]
+        },
+        {
+          "id": "FOUND-004",
+          "title": "Service Business Template - Header",
+          "priority": 4,
+          "passes": true,
+          "acceptance_criteria": [
+            "ServiceHeader component at src/components/templates/headers/ServiceHeader.tsx",
+            "Accepts businessName prop and displays it",
+            "Accepts navigation array prop with label and href",
+            "Accepts phone prop for click-to-call link",
+            "Mobile-responsive with hamburger menu on small screens",
+            "Uses Tailwind for styling, no external CSS"
+          ]
+        },
+        {
+          "id": "FOUND-005",
+          "title": "Service Business Template - Hero",
+          "priority": 5,
+          "passes": true,
+          "acceptance_criteria": [
+            "ServiceHero component at src/components/templates/heroes/ServiceHero.tsx",
+            "Accepts headline, subheadline, ctaText, ctaLink props",
+            "Accepts optional backgroundImage prop",
+            "CTA button links to contact section or custom URL",
+            "Responsive text sizing for mobile/desktop",
+            "Supports custom color scheme via props or CSS variables"
+          ]
+        },
+        {
+          "id": "FOUND-006",
+          "title": "Service Business Template - Services Grid",
+          "priority": 6,
+          "passes": true,
+          "acceptance_criteria": [
+            "ServiceGrid component at src/components/templates/services/ServiceGrid.tsx",
+            "Accepts services array with name, description, icon properties",
+            "Renders services in responsive grid (1 col mobile, 2-3 cols desktop)",
+            "Each service card shows icon, name, and description",
+            "Uses Lucide icons by icon name string",
+            "Section has configurable title prop"
+          ]
+        },
+        {
+          "id": "FOUND-007",
+          "title": "Service Business Template - Testimonials",
+          "priority": 7,
+          "passes": true,
+          "acceptance_criteria": [
+            "TestimonialSection component at src/components/templates/testimonials/TestimonialSection.tsx",
+            "Accepts testimonials array with quote, author, role, avatar properties",
+            "Displays testimonials in card format",
+            "Shows star rating if provided",
+            "Responsive layout for multiple testimonials",
+            "Section title configurable"
+          ]
+        },
+        {
+          "id": "FOUND-008",
+          "title": "Service Business Template - Contact Section",
+          "priority": 8,
+          "passes": true,
+          "acceptance_criteria": [
+            "ContactSection component at src/components/templates/contact/ContactSection.tsx",
+            "Contact form with name, email, phone, message fields",
+            "Displays business contact info: phone, email, address",
+            "Form uses shadcn Input and Button components",
+            "Form has basic client-side validation",
+            "Submit button shows loading state"
+          ]
+        },
+        {
+          "id": "FOUND-009",
+          "title": "Service Business Template - Footer",
+          "priority": 9,
+          "passes": true,
+          "acceptance_criteria": [
+            "ServiceFooter component at src/components/templates/footers/ServiceFooter.tsx",
+            "Displays business name and copyright year",
+            "Shows contact info: phone, email, address",
+            "Navigation links matching header",
+            "Optional social media links array",
+            "Responsive two-column layout on desktop"
+          ]
+        },
+        {
+          "id": "FOUND-010",
+          "title": "Service Business Full Template Assembly",
+          "priority": 10,
+          "passes": true,
+          "acceptance_criteria": [
+            "Full template at src/templates/service-business/index.tsx",
+            "Composes all section components: Header, Hero, Services, Testimonials, Contact, Footer",
+            "Accepts single ClientData prop with all content",
+            "Passes appropriate data to each section component",
+            "Renders complete page layout",
+            "Exports as default for dynamic import"
+          ]
+        },
+        {
+          "id": "FOUND-011",
+          "title": "Client Data Loader Utility",
+          "priority": 11,
+          "passes": true,
+          "acceptance_criteria": [
+            "getClientBySlug function at src/lib/clients.ts",
+            "Reads JSON files from src/data/clients/[slug].json",
+            "Returns typed ClientData object",
+            "Returns null for non-existent clients",
+            "getAllClients function returns array of all clients",
+            "Example client file at src/data/clients/example-plumbing.json"
+          ]
+        },
+        {
+          "id": "FOUND-012",
+          "title": "Dynamic Preview Route",
+          "priority": 12,
+          "passes": true,
+          "acceptance_criteria": [
+            "Preview page at src/app/preview/[clientSlug]/page.tsx",
+            "Uses getClientBySlug to load client data",
+            "Renders ServiceBusinessTemplate with client data",
+            "Shows 404 page for unknown client slugs",
+            "URL /preview/example-plumbing renders example client",
+            "Page is server-side rendered with generateStaticParams"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 2: Dashboard Foundation",
+      "status": "not_started",
+      "stories": [
+        {
+          "id": "DASH-001",
+          "title": "Dashboard Layout Shell",
+          "priority": 13,
+          "passes": false,
+          "acceptance_criteria": [
+            "Dashboard layout at src/app/(dashboard)/layout.tsx",
+            "Sidebar navigation component at src/components/dashboard/Sidebar.tsx",
+            "Sidebar has links: Dashboard, Clients, Templates, Settings",
+            "Header with user avatar placeholder and logout button",
+            "Responsive: sidebar collapses to hamburger on mobile",
+            "Main content area with proper padding"
+          ]
+        },
+        {
+          "id": "DASH-002",
+          "title": "Dashboard Overview Page",
+          "priority": 14,
+          "passes": false,
+          "acceptance_criteria": [
+            "Dashboard page at src/app/(dashboard)/dashboard/page.tsx",
+            "Shows count cards: Total Clients, Demos Sent, Approved, Deployed",
+            "Recent clients list showing last 5 clients",
+            "Each client row shows name, status badge, created date",
+            "Quick action buttons: Add Client, View All Clients",
+            "Uses shadcn Card components for stats"
+          ]
+        },
+        {
+          "id": "DASH-003",
+          "title": "Clients List Page",
+          "priority": 15,
+          "passes": false,
+          "acceptance_criteria": [
+            "Clients page at src/app/(dashboard)/dashboard/clients/page.tsx",
+            "Table displaying all clients with columns: Name, Status, Template, Created, Actions",
+            "Status shown as colored badge (green=deployed, yellow=demo_sent, etc.)",
+            "Action buttons: View Preview, Edit, Delete",
+            "Search/filter input to find clients by name",
+            "Add New Client button at top of page"
+          ]
+        },
+        {
+          "id": "DASH-004",
+          "title": "Add/Edit Client Form",
+          "priority": 16,
+          "passes": false,
+          "acceptance_criteria": [
+            "New client page at src/app/(dashboard)/dashboard/clients/new/page.tsx",
+            "Edit client page at src/app/(dashboard)/dashboard/clients/[id]/edit/page.tsx",
+            "Form fields: Business Name, Slug (auto-generated), Email, Phone, Current Website URL",
+            "Template selector dropdown",
+            "Form validation with error messages",
+            "Save creates/updates JSON file in src/data/clients/",
+            "Cancel returns to clients list"
+          ]
+        },
+        {
+          "id": "DASH-005",
+          "title": "Client Content Editor",
+          "priority": 17,
+          "passes": false,
+          "acceptance_criteria": [
+            "Content editor at src/app/(dashboard)/dashboard/clients/[id]/content/page.tsx",
+            "Tabbed interface: Hero, Services, About, Contact, Colors",
+            "Hero tab: headline, subheadline, CTA text inputs",
+            "Services tab: add/remove/edit services with icon picker",
+            "Contact tab: phone, email, address inputs",
+            "Colors tab: primary, secondary, accent color pickers",
+            "Save updates client JSON file",
+            "Preview button opens /preview/[slug] in new tab"
+          ]
+        },
+        {
+          "id": "DASH-006",
+          "title": "Templates Gallery Page",
+          "priority": 18,
+          "passes": false,
+          "acceptance_criteria": [
+            "Templates page at src/app/(dashboard)/dashboard/templates/page.tsx",
+            "Grid of template cards with thumbnail preview",
+            "Each card shows: name, category, description",
+            "Filter by category dropdown",
+            "Click card to see full preview",
+            "Use Template button links to new client form with template pre-selected"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 3: Preview System Enhancements",
+      "status": "not_started",
+      "stories": [
+        {
+          "id": "PREV-001",
+          "title": "Preview Subpages Route",
+          "priority": 19,
+          "passes": false,
+          "acceptance_criteria": [
+            "Catch-all route at src/app/preview/[clientSlug]/[...slug]/page.tsx",
+            "Handles /preview/client/about, /preview/client/services, /preview/client/contact",
+            "Loads page content from client JSON pages array",
+            "Reuses template header and footer",
+            "Shows 404 for unknown subpages",
+            "Supports dynamic page creation from dashboard"
+          ]
+        },
+        {
+          "id": "PREV-002",
+          "title": "Preview Password Protection",
+          "priority": 20,
+          "passes": false,
+          "acceptance_criteria": [
+            "Optional password field in client JSON",
+            "Password gate component shown before preview",
+            "Simple form: enter password to view",
+            "Password stored in cookie for session",
+            "Bypass for logged-in dashboard users",
+            "Clear password link in footer for testing"
+          ]
+        },
+        {
+          "id": "PREV-003",
+          "title": "Preview Mobile Responsiveness Toolbar",
+          "priority": 21,
+          "passes": false,
+          "acceptance_criteria": [
+            "Floating toolbar on preview pages (dashboard users only)",
+            "Toggle buttons: Desktop, Tablet, Mobile viewport sizes",
+            "Preview renders in iframe with selected width",
+            "Toolbar can be minimized/hidden",
+            "Copy shareable link button",
+            "Edit in dashboard button"
+          ]
+        },
+        {
+          "id": "PREV-004",
+          "title": "Preview Share Link Generator",
+          "priority": 22,
+          "passes": false,
+          "acceptance_criteria": [
+            "Generate shareable link with optional expiry",
+            "Link format: /preview/[slug]?token=[unique-token]",
+            "Token stored in client JSON shareLinks array",
+            "Expired links show friendly error message",
+            "Dashboard shows list of active share links",
+            "Revoke link functionality"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 4: Content Tools",
+      "status": "not_started",
+      "stories": [
+        {
+          "id": "CONT-001",
+          "title": "Website Scraper - Basic Info",
+          "priority": 23,
+          "passes": false,
+          "acceptance_criteria": [
+            "API route at src/app/api/scrape/route.ts",
+            "Accepts URL parameter",
+            "Extracts: page title, meta description, headings",
+            "Extracts: phone numbers, email addresses from page",
+            "Returns structured JSON response",
+            "Error handling for invalid URLs or blocked sites"
+          ]
+        },
+        {
+          "id": "CONT-002",
+          "title": "Website Scraper - Images and Logo",
+          "priority": 24,
+          "passes": false,
+          "acceptance_criteria": [
+            "Extracts logo from common locations (header img, favicon, og:image)",
+            "Finds hero/banner images",
+            "Downloads images to public/uploads/[client-slug]/",
+            "Returns array of image URLs with suggested usage",
+            "Handles relative URLs correctly",
+            "Respects robots.txt and rate limiting"
+          ]
+        },
+        {
+          "id": "CONT-003",
+          "title": "AI Content Generation - Service Descriptions",
+          "priority": 25,
+          "passes": false,
+          "acceptance_criteria": [
+            "API route at src/app/api/ai/generate/route.ts",
+            "Accepts business type and service list",
+            "Generates compelling service descriptions",
+            "Returns array matching input services with enhanced descriptions",
+            "Uses OpenAI API or similar",
+            "Caches results to avoid duplicate API calls"
+          ]
+        },
+        {
+          "id": "CONT-004",
+          "title": "AI Content Generation - Hero Copy",
+          "priority": 26,
+          "passes": false,
+          "acceptance_criteria": [
+            "Generate hero headline and subheadline from business info",
+            "Accepts: business name, type, location, key services",
+            "Returns 3 headline/subheadline options to choose from",
+            "Generates CTA text suggestions",
+            "Industry-appropriate tone and keywords",
+            "Integration with content editor UI"
+          ]
+        },
+        {
+          "id": "CONT-005",
+          "title": "Image Upload and Management",
+          "priority": 27,
+          "passes": false,
+          "acceptance_criteria": [
+            "Upload component at src/components/dashboard/ImageUploader.tsx",
+            "Drag-and-drop or click to upload",
+            "Saves to public/uploads/[client-slug]/",
+            "Generates optimized versions (thumbnail, full)",
+            "Image gallery showing all client uploads",
+            "Delete image functionality",
+            "Returns URL for use in content editor"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 5: Export and Deploy",
+      "status": "not_started",
+      "stories": [
+        {
+          "id": "EXPRT-001",
+          "title": "Export to Static HTML",
+          "priority": 28,
+          "passes": false,
+          "acceptance_criteria": [
+            "Export API at src/app/api/export/static/route.ts",
+            "Renders client preview pages to static HTML",
+            "Inlines CSS or bundles separately",
+            "Copies images to assets folder",
+            "Creates zip file for download",
+            "Includes basic README with hosting instructions"
+          ]
+        },
+        {
+          "id": "EXPRT-002",
+          "title": "Export to Next.js Project",
+          "priority": 29,
+          "passes": false,
+          "acceptance_criteria": [
+            "Export API at src/app/api/export/nextjs/route.ts",
+            "Generates standalone Next.js project",
+            "Includes only needed components for that client",
+            "package.json with minimal dependencies",
+            "Environment variables template",
+            "Zip download with project structure"
+          ]
+        },
+        {
+          "id": "EXPRT-003",
+          "title": "Direct Vercel Deployment",
+          "priority": 30,
+          "passes": false,
+          "acceptance_criteria": [
+            "Vercel API integration for deployment",
+            "Creates new Vercel project from exported code",
+            "Returns deployment URL when complete",
+            "Stores deployment info in client record",
+            "Shows deployment status in dashboard",
+            "Redeploy button for updates"
+          ]
+        },
+        {
+          "id": "EXPRT-004",
+          "title": "Custom Domain Setup Guide",
+          "priority": 31,
+          "passes": false,
+          "acceptance_criteria": [
+            "Domain setup page at src/app/(dashboard)/dashboard/clients/[id]/domain/page.tsx",
+            "Step-by-step instructions for DNS configuration",
+            "Vercel domain verification integration",
+            "SSL certificate status display",
+            "Domain input with validation",
+            "Link to Vercel dashboard for advanced settings"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 6: Marketing Site",
+      "status": "not_started",
+      "stories": [
+        {
+          "id": "MKTG-001",
+          "title": "Marketing Homepage",
+          "priority": 32,
+          "passes": false,
+          "acceptance_criteria": [
+            "Homepage at src/app/(marketing)/page.tsx",
+            "Hero section explaining the service",
+            "How it works section with 3-4 steps",
+            "Features/benefits grid",
+            "Testimonials from clients",
+            "CTA to contact or view pricing",
+            "Professional, modern design"
+          ]
+        },
+        {
+          "id": "MKTG-002",
+          "title": "Portfolio Page",
+          "priority": 33,
+          "passes": false,
+          "acceptance_criteria": [
+            "Portfolio at src/app/(marketing)/portfolio/page.tsx",
+            "Grid of completed client sites",
+            "Each shows thumbnail, client name, industry",
+            "Click to view live site or case study",
+            "Filter by industry/template type",
+            "Pulls from deployed clients with permission flag"
+          ]
+        },
+        {
+          "id": "MKTG-003",
+          "title": "Pricing Page",
+          "priority": 34,
+          "passes": false,
+          "acceptance_criteria": [
+            "Pricing at src/app/(marketing)/pricing/page.tsx",
+            "2-3 pricing tiers displayed as cards",
+            "Features list for each tier",
+            "Highlighted recommended option",
+            "FAQ section below pricing",
+            "CTA buttons to contact form"
+          ]
+        },
+        {
+          "id": "MKTG-004",
+          "title": "Contact Page",
+          "priority": 35,
+          "passes": false,
+          "acceptance_criteria": [
+            "Contact at src/app/(marketing)/contact/page.tsx",
+            "Contact form: name, email, phone, business name, message",
+            "Form submission to API route",
+            "Success/error toast notifications",
+            "Alternative contact methods displayed",
+            "Optional: Calendly embed for scheduling"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 7: SEO & AI Optimization",
+      "status": "not_started",
+      "stories": [
+        {
+          "id": "SEO-001",
+          "title": "Sitemap.xml Generator",
+          "priority": 36,
+          "passes": false,
+          "acceptance_criteria": [
+            "Utility function at src/lib/seo/sitemap.ts",
+            "generateSitemap(clientData, baseUrl) returns XML string",
+            "Includes all pages: home, services, about, contact, any custom pages",
+            "Each URL has lastmod, changefreq, and priority attributes",
+            "Priority: homepage=1.0, services=0.8, other=0.6",
+            "Exported sitemap included in static HTML export",
+            "API route at src/app/api/sitemap/[clientSlug]/route.ts for dynamic generation"
+          ]
+        },
+        {
+          "id": "SEO-002",
+          "title": "Robots.txt Generator with AI Crawlers",
+          "priority": 37,
+          "passes": false,
+          "acceptance_criteria": [
+            "Utility function at src/lib/seo/robots.ts",
+            "generateRobotsTxt(sitemapUrl) returns robots.txt content",
+            "Allows all standard crawlers: Googlebot, Bingbot",
+            "Allows AI crawlers: GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot, CCBot",
+            "References sitemap.xml location",
+            "Disallows /api/, /dashboard/, /_next/ paths",
+            "Exported robots.txt included in static HTML export"
+          ]
+        },
+        {
+          "id": "SEO-003",
+          "title": "LocalBusiness JSON-LD Schema Generator",
+          "priority": 38,
+          "passes": false,
+          "acceptance_criteria": [
+            "Utility function at src/lib/seo/schema.ts",
+            "generateLocalBusinessSchema(clientData) returns JSON-LD object",
+            "Includes: @type, name, telephone, email, address (street, city, state, zip)",
+            "Includes: openingHours, priceRange, serviceArea if provided",
+            "Includes: image (logo), url, sameAs (social links)",
+            "Schema component at src/components/seo/JsonLdSchema.tsx",
+            "Component renders script tag with type application/ld+json",
+            "Integrated into template layouts automatically"
+          ]
+        },
+        {
+          "id": "SEO-004",
+          "title": "Meta Tags Generator",
+          "priority": 39,
+          "passes": false,
+          "acceptance_criteria": [
+            "Utility function at src/lib/seo/meta.ts",
+            "generateMetaTags(pageData, clientData) returns meta tag object",
+            "Generates: title, description, canonical URL",
+            "Generates Open Graph tags: og:title, og:description, og:image, og:url, og:type",
+            "Generates Twitter card tags: twitter:card, twitter:title, twitter:description",
+            "SEO component at src/components/seo/MetaTags.tsx using Next.js Metadata API",
+            "Title format: Page Title | Business Name | Location",
+            "Description auto-generated from page content if not provided"
+          ]
+        },
+        {
+          "id": "SEO-005",
+          "title": "llms.txt Generator for AI Discoverability",
+          "priority": 40,
+          "passes": false,
+          "acceptance_criteria": [
+            "Utility function at src/lib/seo/llmstxt.ts",
+            "generateLlmsTxt(clientData) returns markdown-formatted string",
+            "Includes: business name, description, location, service area",
+            "Lists all services with brief descriptions and links",
+            "Includes contact information: phone, email, address",
+            "Includes business hours if available",
+            "Links to key pages: home, services, about, contact",
+            "API route at src/app/api/llms/[clientSlug]/route.ts",
+            "Exported llms.txt included in static HTML export"
+          ]
+        },
+        {
+          "id": "SEO-006",
+          "title": "FAQ Schema Component",
+          "priority": 41,
+          "passes": false,
+          "acceptance_criteria": [
+            "FAQ component at src/components/templates/faq/FaqSection.tsx",
+            "Accepts faqs array with question and answer properties",
+            "Renders accordion-style FAQ list",
+            "generateFaqSchema(faqs) utility in src/lib/seo/schema.ts",
+            "Generates FAQPage JSON-LD schema automatically",
+            "Schema embedded in component output",
+            "FAQ data field added to client JSON structure",
+            "FAQ tab added to content editor in dashboard"
+          ]
+        },
+        {
+          "id": "SEO-007",
+          "title": "Review/Rating Schema Integration",
+          "priority": 42,
+          "passes": false,
+          "acceptance_criteria": [
+            "generateAggregateRatingSchema(testimonials) in src/lib/seo/schema.ts",
+            "Calculates average rating from testimonials with ratings",
+            "Generates AggregateRating JSON-LD schema",
+            "Generates individual Review schemas for each testimonial",
+            "Integrated into TestimonialSection component",
+            "Rating field (1-5) added to testimonial data structure",
+            "Star rating display updated to use actual rating value"
+          ]
+        },
+        {
+          "id": "SEO-008",
+          "title": "SEO Dashboard Panel",
+          "priority": 43,
+          "passes": false,
+          "acceptance_criteria": [
+            "SEO tab added to client content editor",
+            "Shows checklist of SEO completeness: title, description, schema, etc.",
+            "Preview of how site appears in Google search results",
+            "Preview of JSON-LD schema output",
+            "Warnings for missing recommended fields",
+            "Link to test tools: Google Rich Results Test, Schema Validator",
+            "Toggle to enable/disable llms.txt generation"
+          ]
+        }
+      ]
+    }
+  ]
+}

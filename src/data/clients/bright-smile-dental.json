@@ -1,0 +1,79 @@
+{
+  "id": "10",
+  "slug": "bright-smile-dental",
+  "name": "Bright Smile Dental",
+  "email": "appointments@brightsmile.com",
+  "phone": "(512) 555-TEETH",
+  "status": "prospect",
+  "template": "service-business",
+  "colors": {
+    "primary": "#0891b2",
+    "secondary": "#0e7490",
+    "accent": "#06b6d4",
+    "background": "#ecfeff",
+    "text": "#164e63"
+  },
+  "content": {
+    "hero": {
+      "headline": "Gentle Care. Beautiful Smiles.",
+      "subheadline": "Family Dentistry • Cosmetic Services • Same-Day Appointments Available",
+      "cta": "Book Appointment",
+      "ctaLink": "#contact"
+    },
+    "about": {
+      "title": "Your Family's Dental Home",
+      "text": "Dr. Emily Chen and the Bright Smile team have been creating healthy, beautiful smiles in Austin since 2015. We believe dental care should be comfortable, transparent, and even enjoyable. Our modern office features the latest technology including digital X-rays, intraoral cameras, and sedation options for anxious patients. We treat patients of all ages, from first teeth to dentures, with the same gentle care."
+    },
+    "services": [
+      {
+        "name": "General Dentistry",
+        "description": "Cleanings, exams, fillings, and preventive care for the whole family. Insurance accepted.",
+        "icon": "Shield"
+      },
+      {
+        "name": "Cosmetic Dentistry",
+        "description": "Teeth whitening, veneers, bonding, and smile makeovers. Look your best.",
+        "icon": "Star"
+      },
+      {
+        "name": "Orthodontics",
+        "description": "Invisalign clear aligners for teens and adults. Straighten your smile discreetly.",
+        "icon": "Settings"
+      },
+      {
+        "name": "Emergency Care",
+        "description": "Toothaches, broken teeth, lost fillings. Same-day appointments for urgent dental needs.",
+        "icon": "AlertTriangle"
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "Jennifer M.",
+        "content": "I was terrified of dentists until I found Dr. Chen. She's so patient and gentle. My whole family comes here now.",
+        "rating": 5
+      },
+      {
+        "name": "Robert T.",
+        "content": "Got my Invisalign here. The process was smooth, results are amazing, and the payment plan made it affordable.",
+        "rating": 5
+      },
+      {
+        "name": "The Garcia Family",
+        "content": "Four kids, four different dental needs. Bright Smile handles it all with kindness and efficiency.",
+        "rating": 5
+      }
+    ],
+    "contact": {
+      "phone": "(512) 555-TEETH",
+      "email": "appointments@brightsmile.com",
+      "address": "4200 Medical Pkwy, Suite 300, Austin, TX 78756",
+      "hours": "Mon-Thu: 8AM-5PM, Fri: 8AM-2PM"
+    },
+    "social": {
+      "facebook": "https://facebook.com/brightsmiledental",
+      "instagram": "https://instagram.com/brightsmiledental"
+    }
+  },
+  "createdAt": "2026-01-22T00:00:00Z",
+  "updatedAt": "2026-01-22T00:00:00Z"
+}

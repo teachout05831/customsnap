@@ -1,0 +1,81 @@
+{
+  "id": "9",
+  "slug": "ironforge-fitness",
+  "name": "IronForge Fitness",
+  "email": "join@ironforgefitness.com",
+  "phone": "(512) 555-LIFT",
+  "status": "prospect",
+  "template": "service-business",
+  "colors": {
+    "primary": "#dc2626",
+    "secondary": "#1f2937",
+    "accent": "#f97316",
+    "background": "#fafafa",
+    "text": "#111827"
+  },
+  "content": {
+    "hero": {
+      "headline": "Forge Your Strongest Self",
+      "subheadline": "State-of-the-Art Equipment • Expert Trainers • 24/7 Access",
+      "cta": "Start Free 7-Day Trial",
+      "ctaLink": "#contact"
+    },
+    "about": {
+      "title": "More Than a Gym. A Community.",
+      "text": "IronForge Fitness was built for people serious about results. Our 15,000 sq ft facility features premium strength equipment, dedicated cardio zones, functional training areas, and recovery amenities including saunas and massage chairs. Our certified trainers bring 50+ combined years of experience in bodybuilding, powerlifting, and sports performance. Whether you're new to fitness or a competitive athlete, IronForge has the tools and expertise to help you reach your goals."
+    },
+    "services": [
+      {
+        "name": "Gym Membership",
+        "description": "24/7 access to all equipment, free weights, cardio machines, and locker rooms. No contracts.",
+        "icon": "Zap"
+      },
+      {
+        "name": "Personal Training",
+        "description": "1-on-1 coaching with certified trainers. Custom programs, nutrition guidance, and accountability.",
+        "icon": "Star"
+      },
+      {
+        "name": "Group Classes",
+        "description": "HIIT, spin, yoga, boxing, and strength classes daily. All fitness levels welcome.",
+        "icon": "Home"
+      },
+      {
+        "name": "Sports Performance",
+        "description": "Athletic training programs for high school, college, and professional athletes.",
+        "icon": "Shield"
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "Marcus D.",
+        "content": "Lost 45 lbs in 6 months with my trainer Alex. This gym has everything - and the community keeps you accountable.",
+        "rating": 5
+      },
+      {
+        "name": "Brittany K.",
+        "content": "Finally a gym that doesn't feel intimidating. The trainers are supportive and the classes are challenging but fun!",
+        "rating": 5
+      },
+      {
+        "name": "Coach Steve R.",
+        "role": "High School Football Coach",
+        "content": "Send all our athletes here for off-season training. The sports performance program is top-notch.",
+        "rating": 5
+      }
+    ],
+    "contact": {
+      "phone": "(512) 555-LIFT",
+      "email": "join@ironforgefitness.com",
+      "address": "6800 Burnet Rd, Austin, TX 78757",
+      "hours": "Open 24/7 for Members"
+    },
+    "social": {
+      "instagram": "https://instagram.com/ironforgefitness",
+      "facebook": "https://facebook.com/ironforgefitness",
+      "tiktok": "https://tiktok.com/@ironforgefitness"
+    }
+  },
+  "createdAt": "2026-01-22T00:00:00Z",
+  "updatedAt": "2026-01-22T00:00:00Z"
+}

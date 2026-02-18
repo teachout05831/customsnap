@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design 1: Minimal & Clean - Customer Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+          <span class="text-white font-bold text-lg">C</span>
+        </div>
+        <span class="text-xl font-semibold text-gray-900">Crafted Sites</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="text-sm text-gray-500">Welcome, John</span>
+        <button class="text-sm text-gray-400 hover:text-gray-600">Sign Out</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-12">
+
+    <!-- Welcome Section -->
+    <div class="mb-12">
+      <h1 class="text-3xl font-semibold text-gray-900 mb-2">Your Website is Being Crafted</h1>
+      <p class="text-gray-500 text-lg">We're building something special for you. Here's where we are.</p>
+    </div>
+
+    <!-- Progress Card -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 mb-8">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900">Project Progress</h2>
+          <p class="text-gray-500">Estimated completion: February 3, 2026</p>
+        </div>
+        <div class="text-right">
+          <span class="text-4xl font-bold text-blue-600">60%</span>
+          <p class="text-sm text-gray-500">Complete</p>
+        </div>
+      </div>
+
+      <!-- Progress Steps -->
+      <div class="relative">
+        <!-- Progress Line -->
+        <div class="absolute top-5 left-5 right-5 h-0.5 bg-gray-200">
+          <div class="h-full bg-blue-600 transition-all" style="width: 60%"></div>
+        </div>
+
+        <div class="relative flex justify-between">
+          <!-- Step 1 -->
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white z-10">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            <span class="mt-3 text-sm font-medium text-gray-900">Discovery</span>
+            <span class="text-xs text-gray-400">Completed</span>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white z-10">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            <span class="mt-3 text-sm font-medium text-gray-900">Design</span>
+            <span class="text-xs text-gray-400">Completed</span>
+          </div>
+
+          <!-- Step 3 - Current -->
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center z-10 ring-4 ring-blue-100">
+              <div class="w-3 h-3 bg-white rounded-full"></div>
+            </div>
+            <span class="mt-3 text-sm font-medium text-blue-600">Development</span>
+            <span class="text-xs text-blue-500">In Progress</span>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 z-10">
+              <span class="text-sm font-medium">4</span>
+            </div>
+            <span class="mt-3 text-sm font-medium text-gray-400">Review</span>
+            <span class="text-xs text-gray-400">Pending</span>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 z-10">
+              <span class="text-sm font-medium">5</span>
+            </div>
+            <span class="mt-3 text-sm font-medium text-gray-400">Launch</span>
+            <span class="text-xs text-gray-400">Pending</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Two Column Layout -->
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- Current Activity -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Current Activity</h3>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+            <div>
+              <p class="text-gray-900 font-medium">Building your homepage</p>
+              <p class="text-sm text-gray-500">Started 2 hours ago</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 bg-gray-300 rounded-full mt-2"></div>
+            <div>
+              <p class="text-gray-600">Setting up contact forms</p>
+              <p class="text-sm text-gray-400">Up next</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 bg-gray-300 rounded-full mt-2"></div>
+            <div>
+              <p class="text-gray-600">Mobile optimization</p>
+              <p class="text-sm text-gray-400">Scheduled</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Your Details -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Project Details</h3>
+        <div class="space-y-3">
+          <div class="flex justify-between py-2 border-b border-gray-50">
+            <span class="text-gray-500">Project Type</span>
+            <span class="text-gray-900 font-medium">Service Business</span>
+          </div>
+          <div class="flex justify-between py-2 border-b border-gray-50">
+            <span class="text-gray-500">Pages</span>
+            <span class="text-gray-900 font-medium">5 Pages</span>
+          </div>
+          <div class="flex justify-between py-2 border-b border-gray-50">
+            <span class="text-gray-500">Style</span>
+            <span class="text-gray-900 font-medium">Modern & Clean</span>
+          </div>
+          <div class="flex justify-between py-2">
+            <span class="text-gray-500">Started</span>
+            <span class="text-gray-900 font-medium">Jan 30, 2026</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Need Help -->
+    <div class="mt-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 flex items-center justify-between">
+      <div>
+        <h3 class="text-lg font-semibold text-gray-900">Have questions?</h3>
+        <p class="text-gray-600">We're here to help. Reach out anytime.</p>
+      </div>
+      <button class="bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition-colors">
+        Contact Us
+      </button>
+    </div>
+
+  </main>
+
+</body>
+</html>

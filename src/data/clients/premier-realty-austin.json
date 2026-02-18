@@ -1,0 +1,80 @@
+{
+  "id": "8",
+  "slug": "premier-realty-austin",
+  "name": "Premier Realty Austin",
+  "email": "info@premierrealtyaustin.com",
+  "phone": "(512) 555-HOME",
+  "status": "prospect",
+  "template": "service-business",
+  "colors": {
+    "primary": "#b45309",
+    "secondary": "#92400e",
+    "accent": "#fbbf24",
+    "background": "#fffbeb",
+    "text": "#1c1917"
+  },
+  "content": {
+    "hero": {
+      "headline": "Find Your Dream Home in Austin",
+      "subheadline": "#1 Rated Real Estate Team • 500+ Homes Sold • Local Market Experts",
+      "cta": "Start Your Home Search",
+      "ctaLink": "#contact"
+    },
+    "about": {
+      "title": "Your Trusted Austin Real Estate Partner",
+      "text": "Sarah Mitchell and her team at Premier Realty Austin have helped over 500 families find their perfect home since 2012. With deep knowledge of Austin's diverse neighborhoods - from downtown condos to Hill Country estates - we guide buyers and sellers through every step of the transaction. Our data-driven approach and skilled negotiation have saved our clients millions."
+    },
+    "services": [
+      {
+        "name": "Buyer Representation",
+        "description": "Expert guidance from first showing to closing. We find homes before they hit the market.",
+        "icon": "Home"
+      },
+      {
+        "name": "Seller Services",
+        "description": "Strategic pricing, professional staging, and aggressive marketing to sell fast and for top dollar.",
+        "icon": "Star"
+      },
+      {
+        "name": "Investment Properties",
+        "description": "Identify high-ROI rental properties and multi-family investments in Austin's growing market.",
+        "icon": "Zap"
+      },
+      {
+        "name": "Relocation Services",
+        "description": "Moving to Austin? We'll help you find the right neighborhood, schools, and lifestyle fit.",
+        "icon": "Settings"
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "Kevin & Amanda L.",
+        "content": "Sarah found us our dream home in a competitive market. We were outbid twice before, but her strategy won us the third offer!",
+        "rating": 5
+      },
+      {
+        "name": "The Henderson Family",
+        "content": "Sold our home in 5 days for $30,000 over asking. Premier Realty's marketing was incredible.",
+        "rating": 5
+      },
+      {
+        "name": "Dr. James P.",
+        "content": "Relocated from Chicago for work. Sarah helped me understand Austin neighborhoods and find the perfect spot. Seamless experience.",
+        "rating": 5
+      }
+    ],
+    "contact": {
+      "phone": "(512) 555-HOME",
+      "email": "info@premierrealtyaustin.com",
+      "address": "3500 Jefferson St, Suite 100, Austin, TX 78731",
+      "hours": "Mon-Sat: 9AM-7PM, Sun: 12PM-5PM"
+    },
+    "social": {
+      "instagram": "https://instagram.com/premierrealtyaustin",
+      "facebook": "https://facebook.com/premierrealtyaustin",
+      "youtube": "https://youtube.com/premierrealtyaustin"
+    }
+  },
+  "createdAt": "2026-01-22T00:00:00Z",
+  "updatedAt": "2026-01-22T00:00:00Z"
+}

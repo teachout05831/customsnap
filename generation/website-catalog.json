@@ -1,0 +1,179 @@
+{
+  "$schema": "./website-catalog-schema.json",
+  "version": "1.0",
+  "description": "Catalog of finalized website builds to track patterns and ensure variety",
+  "lastUpdated": "2026-01-19",
+
+  "templates": {
+    "01-modern-agency": {
+      "name": "Modern Agency",
+      "file": "templates/01-modern-agency.html",
+      "status": "template",
+      "characteristics": {
+        "layout": "split-hero",
+        "colorScheme": "light-gradient",
+        "heroStyle": "text-left-image-right",
+        "navigation": "sticky-minimal",
+        "primaryCTA": "gradient-button",
+        "sections": ["hero", "social-proof", "services-grid", "stats-bar", "testimonials", "how-it-works", "faq", "cta", "footer"]
+      }
+    },
+    "02-bold-dark-saas": {
+      "name": "Bold Dark SaaS",
+      "file": "templates/02-bold-dark-saas.html",
+      "status": "template",
+      "characteristics": {
+        "layout": "centered-hero",
+        "colorScheme": "dark-glow",
+        "heroStyle": "centered-with-product-shot",
+        "navigation": "sticky-with-announcement",
+        "primaryCTA": "gradient-pill",
+        "sections": ["announcement", "hero", "logos", "features-grid", "bento-grid", "testimonials", "pricing", "cta", "footer"]
+      }
+    },
+    "03-clean-minimal-service": {
+      "name": "Clean Minimal Service",
+      "file": "templates/03-clean-minimal-service.html",
+      "status": "template",
+      "characteristics": {
+        "layout": "split-hero",
+        "colorScheme": "light-teal",
+        "heroStyle": "text-left-image-right-with-badge",
+        "navigation": "sticky-with-phone",
+        "primaryCTA": "solid-button",
+        "sections": ["hero", "trust-bar", "services-grid", "about-split", "process-steps", "testimonials", "service-areas", "contact-form", "footer"]
+      }
+    },
+    "04-creative-marketing-agency": {
+      "name": "Creative Marketing Agency",
+      "file": "templates/04-creative-marketing-agency.html",
+      "status": "template",
+      "characteristics": {
+        "layout": "centered-hero",
+        "colorScheme": "light-warm-accent",
+        "heroStyle": "centered-with-highlight-underline",
+        "navigation": "transparent-scroll-change",
+        "primaryCTA": "pill-button",
+        "sections": ["hero", "logos", "services-numbered", "case-studies-dark", "testimonial-featured", "process", "team-grid", "cta", "footer"]
+      }
+    },
+    "05-ai-builder-landing": {
+      "name": "AI Builder Landing",
+      "file": "templates/05-ai-builder-landing.html",
+      "status": "template",
+      "characteristics": {
+        "layout": "centered-hero",
+        "colorScheme": "light-purple-gradient",
+        "heroStyle": "centered-with-floating-stats",
+        "navigation": "sticky-minimal",
+        "primaryCTA": "gradient-button",
+        "sections": ["hero", "social-proof-bar", "how-it-works", "features-grid", "showcase-split", "templates-grid", "testimonials", "pricing", "faq", "cta", "footer"]
+      }
+    }
+  },
+
+  "builds": [],
+
+  "characteristics": {
+    "layouts": [
+      "split-hero",
+      "centered-hero",
+      "full-width-hero",
+      "video-hero",
+      "carousel-hero"
+    ],
+    "colorSchemes": [
+      "light-gradient",
+      "light-solid",
+      "light-warm-accent",
+      "light-cool-accent",
+      "light-teal",
+      "light-purple-gradient",
+      "dark-solid",
+      "dark-glow",
+      "dark-gradient"
+    ],
+    "heroStyles": [
+      "text-left-image-right",
+      "text-right-image-left",
+      "centered-with-product-shot",
+      "centered-with-floating-stats",
+      "centered-with-highlight-underline",
+      "centered-text-only",
+      "text-left-image-right-with-badge",
+      "full-background-image",
+      "video-background"
+    ],
+    "navigationStyles": [
+      "sticky-minimal",
+      "sticky-with-phone",
+      "sticky-with-announcement",
+      "transparent-scroll-change",
+      "hamburger-only",
+      "sidebar"
+    ],
+    "ctaStyles": [
+      "solid-button",
+      "gradient-button",
+      "gradient-pill",
+      "pill-button",
+      "outline-button",
+      "ghost-button"
+    ],
+    "sectionTypes": [
+      "hero",
+      "announcement",
+      "social-proof",
+      "social-proof-bar",
+      "trust-bar",
+      "logos",
+      "services-grid",
+      "services-numbered",
+      "features-grid",
+      "bento-grid",
+      "stats-bar",
+      "about-split",
+      "showcase-split",
+      "testimonials",
+      "testimonial-featured",
+      "case-studies-dark",
+      "case-studies-light",
+      "how-it-works",
+      "process-steps",
+      "process",
+      "team-grid",
+      "pricing",
+      "faq",
+      "contact-form",
+      "service-areas",
+      "templates-grid",
+      "cta",
+      "footer"
+    ],
+    "industries": [
+      "plumbing",
+      "hvac",
+      "electrical",
+      "roofing",
+      "landscaping",
+      "cleaning",
+      "pest-control",
+      "auto-repair",
+      "dental",
+      "medical",
+      "legal",
+      "accounting",
+      "real-estate",
+      "restaurant",
+      "retail",
+      "fitness",
+      "salon-spa",
+      "photography",
+      "consulting",
+      "marketing-agency",
+      "tech-saas",
+      "construction",
+      "home-services-general"
+    ]
+  }
+}

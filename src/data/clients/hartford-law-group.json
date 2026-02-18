@@ -1,0 +1,79 @@
+{
+  "id": "7",
+  "slug": "hartford-law-group",
+  "name": "Hartford Law Group",
+  "email": "contact@hartfordlawgroup.com",
+  "phone": "(512) 555-LAWS",
+  "status": "prospect",
+  "template": "service-business",
+  "colors": {
+    "primary": "#1e3a5f",
+    "secondary": "#0f2744",
+    "accent": "#c9a227",
+    "background": "#f8fafc",
+    "text": "#0f172a"
+  },
+  "content": {
+    "hero": {
+      "headline": "Experienced Trial Lawyers Fighting for You",
+      "subheadline": "Personal Injury • Business Litigation • Family Law • Free Consultations",
+      "cta": "Free Case Review",
+      "ctaLink": "#contact"
+    },
+    "about": {
+      "title": "Results-Driven Legal Representation",
+      "text": "Hartford Law Group has recovered over $150 million for our clients since 2003. Our team of 12 attorneys brings decades of courtroom experience to every case. We work on contingency for personal injury cases - you pay nothing unless we win. From complex business disputes to sensitive family matters, we provide the aggressive representation you deserve."
+    },
+    "services": [
+      {
+        "name": "Personal Injury",
+        "description": "Car accidents, medical malpractice, workplace injuries. We fight insurance companies so you get fair compensation.",
+        "icon": "Shield"
+      },
+      {
+        "name": "Business Litigation",
+        "description": "Contract disputes, partnership conflicts, intellectual property. Protecting your business interests.",
+        "icon": "Star"
+      },
+      {
+        "name": "Family Law",
+        "description": "Divorce, custody, adoption, prenuptial agreements. Compassionate guidance through difficult transitions.",
+        "icon": "Home"
+      },
+      {
+        "name": "Estate Planning",
+        "description": "Wills, trusts, probate, asset protection. Secure your family's future with proper planning.",
+        "icon": "Clock"
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "Marcus J.",
+        "content": "After my accident, the insurance company offered $15,000. Hartford Law got me $380,000. They changed my life.",
+        "rating": 5
+      },
+      {
+        "name": "Catherine & Robert M.",
+        "content": "Handled our business dispute professionally and efficiently. Saved our company from a frivolous lawsuit.",
+        "rating": 5
+      },
+      {
+        "name": "Stephanie T.",
+        "content": "My divorce was complicated with significant assets involved. They protected my interests every step of the way.",
+        "rating": 5
+      }
+    ],
+    "contact": {
+      "phone": "(512) 555-LAWS",
+      "email": "contact@hartfordlawgroup.com",
+      "address": "301 Congress Ave, Suite 1500, Austin, TX 78701",
+      "hours": "Mon-Fri: 8AM-6PM | 24/7 for Emergencies"
+    },
+    "social": {
+      "linkedin": "https://linkedin.com/company/hartfordlawgroup",
+      "facebook": "https://facebook.com/hartfordlawgroup"
+    }
+  },
+  "createdAt": "2026-01-22T00:00:00Z",
+  "updatedAt": "2026-01-22T00:00:00Z"
+}
